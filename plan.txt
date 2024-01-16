@@ -1,0 +1,39 @@
+Components
+
+Convert from bin
+Save order
+Merge
+    Find two smallest 
+    Combine letters
+    Move counts
+Unmerge
+Reorder
+Move circuit
+    Format: $xxx#          b ->                     b xxx  $
+
+Start symbol #
+End Symbol $
+Control Symbol ?
+
+Input Format:
+Space separated list of 
+
+a 110101 b 101010
+
+Each data point is converted into a space separated list of units
+    Each unit is x-oooo where x is the charachter
+
+    ex. a-ooo b-oooo
+
+To do:
+    Integrate and clean two_smallest and merge into huffman_encoding
+        Choose how many spaces after # and before $ for each part of code
+    Clean up controls, especially c1
+    
+Control is the character to the left of $
+Move no longer moves $, after finding that there are no more characters, move goes right until it finds $, then goes left one to control
+This circuit forces huffman_encoding to leave two spaces, and merge will ultimately leave three => two_smallest and merge must be able to work with variable amount of whitespace
+
+Need a copy circuit for just ones and zeros
+But to store order, need a copy circuit for entire language
+

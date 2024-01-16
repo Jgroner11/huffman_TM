@@ -1,0 +1,126 @@
+; Puts the marked characters at the end together
+; Adds parentheses
+; Moves all os to the end
+; ex. # a&oo& b~o~ c-oooo  d-ooo  $
+
+
+0 $ * l 1
+0 * * r * 
+
+control 1 2 l find~
+control 2 3 r write)
+control 3 4 l find~2
+control 4 _ r c4
+
+1 * 1 r write(
+
+write( _ ( l find&
+write( * * r *
+
+write) _ ) r write-
+write) * * r *
+
+write- _ - l find&2
+
+find& & * l move&
+find& * * l *
+
+find&2 & % l move&
+find&2 * * l *
+
+move& _ * r move1
+move& & % l *
+move& * * l *
+
+find~ ~ * l move~
+find~ * * l *
+
+find~2 ~ % l move~
+find~2 * * l *
+
+move~ _ * r move1
+move~ ~ % l *
+move~ * * l *
+
+
+c4 _ * r c41
+c4 $ _ r *
+c4 * * r * 
+
+c41 _ * r c42
+
+c42 _ $ * halt-accept
+
+
+
+move @ _ r move1
+move * * l *
+
+move2 $ * l control
+move2 * * r *
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+move1 0 @ r m0
+move1 1 @ r m1
+move1 a @ r ma
+move1 b @ r mb
+move1 c @ r mc
+move1 d @ r md
+move1 o @ r mo
+move1 ( @ r m(
+move1 ) @ r m)
+move1 % _ r move2
+
+m0 $ * r m01
+m0 * * r *
+
+m01 _ 0 l move 
+m01 * * r *
+
+m1 $ * r m11
+m1 * * r *
+
+m11 _ 1 l move 
+m11 * * r *
+
+ma $ * r ma1
+ma * * r *
+
+ma1 _ a l move 
+ma1 * * r *
+
+mb $ * r mb1
+mb * * r *
+
+mb1 _ b l move 
+mb1 * * r *
+
+mc $ * r mc1
+mc * * r *
+
+mc1 _ c l move 
+mc1 * * r *
+
+md $ * r md1
+md * * r *
+
+md1 _ d l move 
+md1 * * r *
+
+mo $ * r mo1
+mo * * r *
+
+mo1 _ o l move 
+mo1 * * r *
+
+m( $ * r m(1
+m( * * r *
+
+m(1 _ ( l move 
+m(1 * * r *
+
+m) $ * r m)1
+m) * * r *
+
+m)1 _ ) l move 
+m)1 * * r *

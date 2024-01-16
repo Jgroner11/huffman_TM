@@ -1,0 +1,181 @@
+; Decomposes the merged characters into a prefix code
+; ex.  ((((a)(b))(d))(c)) 1$(
+; ex.  (((a)(b))((c)(d))) 1$(
+; ex.  (((a)((d)(c)))(b)) 1$(
+; The ( signifies the start, always look for first parentheses
+
+
+control 1 2 r c1
+control 2 _ r c2
+
+c1 _ ) l c11
+c1 * * r *
+
+c11 # * r c12
+c11 * * l *
+
+c12 ( * r c13
+c12 * * r *
+
+c13 _ % l c14
+c13 * * r *
+
+c14 ) _ r copy1
+c14 * * l *
+
+c2 _ 1 r c2a
+c2 $ _ r *
+c2 * * r *
+
+c2a _ * r c2b
+
+c2b _ 1 r c2c
+
+c2c _ $ r c2d
+
+c2d _ ( l c21 
+
+c21 # _ r c22
+c21 * * l *
+
+c22 ( * r c23
+c22 * * r *
+
+c23 _ 0 l c24
+c23 * * r *
+
+c24 _ * r 0
+c24 * * l *
+
+0 ( # r 1
+0 $ * * halt-accept
+0 * * r *
+
+; Look for ( or character to tell if we need to unmerge current segment
+1 ( { r 2
+1 * * l 5
+
+; Look for first )
+2 ) } l 3
+2 } > r *
+2 * * r *
+
+; Look for first ( or {
+3 { @ r 4
+3 ( < r 2
+3 * * l *
+
+; Reset parentheses and set up move
+4 } % l move
+4 < ( r *
+4 > ) r *
+4 * * r * 
+
+5 # _ r *
+5 ) - r *
+5 _ * r 0
+5 * * r *
+
+
+
+copy @ _ r copy1
+copy * * l *
+
+copy2 $ * l control
+copy2 * * r *
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+copy1 0 @ l w0
+copy1 1 @ l w1
+copy1 % _ r copy2
+
+w0 _ 0 r w01
+
+w01 $ * r w02
+w01 * * r *
+
+w02 _ 0 l copy 
+w02 * * r *
+
+w1 _ 1 r w11
+
+w11 $ * r w12
+w11 * * r *
+
+w12 _ 1 l copy 
+w12 * * r *
+
+
+move @ _ r move1
+move * * l *
+
+move2 $ * l control
+move2 * * r *
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+move1 0 @ r m0
+move1 1 @ r m1
+move1 a @ r ma
+move1 b @ r mb
+move1 c @ r mc
+move1 d @ r md
+move1 o @ r mo
+move1 ( @ r m(
+move1 ) @ r m)
+move1 % _ r move2
+
+m0 $ * r m01
+m0 * * r *
+
+m01 _ 0 l move 
+m01 * * r *
+
+m1 $ * r m11
+m1 * * r *
+
+m11 _ 1 l move 
+m11 * * r *
+
+ma $ * r ma1
+ma * * r *
+
+ma1 _ a l move 
+ma1 * * r *
+
+mb $ * r mb1
+mb * * r *
+
+mb1 _ b l move 
+mb1 * * r *
+
+mc $ * r mc1
+mc * * r *
+
+mc1 _ c l move 
+mc1 * * r *
+
+md $ * r md1
+md * * r *
+
+md1 _ d l move 
+md1 * * r *
+
+mo $ * r mo1
+mo * * r *
+
+mo1 _ o l move 
+mo1 * * r *
+
+m( $ * r m(1
+m( * * r *
+
+m(1 _ ( l move 
+m(1 * * r *
+
+m) $ * r m)1
+m) * * r *
+
+m)1 _ ) l move 
+m)1 * * r *
+
+

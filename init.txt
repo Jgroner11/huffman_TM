@@ -1,0 +1,61 @@
+0 * * * init
+
+init * * l *
+init _ * l init1
+
+init1 _ # r init2
+
+init2 _ * r init3
+init2 * * r *
+
+init3 _ 1 r init4
+init3 * * r init2
+
+init4 _ $ l init5
+
+init5 # * r init6
+init5 * * l *
+
+init6 _ @ r init7
+
+init7 _ % l move
+init7 * * r *
+
+move @ _ r move2
+move * * l *
+
+m$ $ * r m$1
+m$ * * r *
+
+m$1 _ * r m$2
+m$1 * * r *
+
+m$2 _ * r m$3
+
+m$3 _ $ l m$4
+
+m$4 $ _ l control
+m$4 * * l *
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+move2 a @ r ma
+move2 b @ r mb
+move2 c @ r mc
+move2 % _ r m$
+
+ma $ * r ma1
+ma * * r *
+
+ma1 _ a l move 
+ma1 * * r *
+
+mb $ * r mb1
+mb * * r *
+
+mb1 _ b l move 
+mb1 * * r *
+
+mc $ * r mc1
+mc * * r *
+
+mc1 _ c l move 
+mc1 * * r *

@@ -1,0 +1,95 @@
+; Converts binary number to that many os and then returns it to the binary number
+
+
+;0 Creates left end marker
+0 # * r 9
+0 _ # r 9
+0 * * l *
+
+;9 Creates right end marker
+9 $ * l 10
+9 _ $ l 10
+9 * * r *
+
+;10 Looks for next 1
+10 1 0 r 11
+10 # * r 12
+10 * * l *
+
+;11 Adds o to end of list
+11 _ o l 10
+11 0 1 r *
+11 * * r *
+
+; Shift 2 -> Maintains head position but only works for a single charachter text
+
+;12 Finds last o
+12 _ * l 13
+12 $ o r *
+12 * * r *
+
+;13 Deletes last o
+13 o _ l 14
+
+;14
+14 # * * 0b
+14 * o r 12
+14 o * l *
+
+
+;0b Creates right end marker
+0b _ $ l 1
+0b $ * l 1
+0b * * r *
+
+;1 Creates left end marker or returns to it
+1 _ # * *
+1 # * r 2
+1 * * l *
+
+;2 Looks for first o
+2 o x r 3
+2 _ * l 5
+2 * * r *
+
+;3 Looks for o, parity is 1
+3 o * r 4
+3 _ 1 l 1
+3 * * r *
+
+;4 Looks for o, parity is 0
+4 o x r 3
+4 _ 0 l 1
+4 * * r *
+
+; Reverse binary string and put it in the right place
+
+;5 Find last digit
+5 _ * l *
+5 0 _ l 6a
+5 1 _ l 7a
+5 $ _ l 8
+5 * * r *
+
+;6 Move a 1
+6a # * r 6b
+6a * * l *
+
+6b * 0 r 2
+6b 0 * r *
+6b 1 * r *
+
+;7 Move a 1
+7a # * r 7b
+7a * * l *
+
+7b * 1 r 2
+7b 0 * r *
+7b 1 * r *
+
+;8 Clean
+8 # * * halt-accept
+8 x _ l *
+8 * * l *
+
+* * * * halt-invalidFormat

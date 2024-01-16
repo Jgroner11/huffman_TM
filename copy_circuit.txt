@@ -1,0 +1,26 @@
+copy @ _ r copy1
+copy * * l *
+
+copy2 $ * l control
+copy2 * * r *
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+copy1 0 @ l w0
+copy1 1 @ l w1
+copy1 % _ r copy2
+
+w0 _ 0 r w01
+
+w01 $ * r w02
+w01 * * r *
+
+w02 _ 0 l copy 
+w02 * * r *
+
+w1 _ 1 r w11
+
+w11 $ * r w12
+w11 * * r *
+
+w12 _ 1 l copy 
+w12 * * r *

@@ -1,0 +1,46 @@
+
+; Shift 1 -> Does not maintain head position
+;a
+;a $ # * halt-accept
+;a * _ r *
+
+; Shift 2 -> Maintains head position but only works for a single character text
+
+;a Adds o to front and finds last o
+a _ * l b
+a $ o r *
+a * * r *
+
+;b Deletes last o
+b o _ l c
+
+;c finds first non-o position
+c # * * halt-accept
+c * o r a
+c o * l *
+
+; Shift 3 Universal -> Maintains head position and works for all characters included
+
+;a
+;a $ _ r b
+;a * _ r *
+
+;b
+;b o $ l mo1
+; Add b x $ l mx1 here for each character x
+;b _ * l c
+
+;mo1
+;mo1 * * r mo2
+;mo1 _ * l *
+
+;mo2
+;mo2 * o r a
+
+; Add states mx1 and mx2 here for each letter x
+
+;c
+;c # * * halt-accept
+;c * * l *
+
+* * * * halt-invalidFormat

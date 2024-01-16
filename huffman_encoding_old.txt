@@ -1,0 +1,143 @@
+; TM that takes in set of characters and their frequencies and outputs the optimal prefix code
+; Input format: space separated list of pairs c1 f1 c2 f2 . . . where each fi is the frequency of character ci
+;   characters must me members of the acceptable alphabet, currently [a,b,c]
+;   frequencies must be whole numbers represented in binary. The limiting factor in how long this program takes is the size of these binary digits so scale down and round if the program is taking to long
+;    ex: a 1001 b 111 c 1
+;    ex: a 10 b 1 c 100 d 011 
+; Output format: space separated list of pairs c1 e1 c2 e2 . . . where ei is the binary encoding for character ci
+
+0 * * * init
+;* * * * halt-invalidFormat
+
+control 1 2 l c1
+control 2 1 r c2
+
+findControl ? * r control
+findControl * * l *
+
+c1 # _ r c11
+c1 * * l *
+
+c11 * * l c12
+c11 ? _ r c14
+c11 _ * r *
+
+c12 _ * l c13
+
+c13 _ # r moveWord
+
+; need to replace # character and move $ character 1 to the right
+c14 _ # r c15
+c14 * _ r *
+
+c15 $ _ r c16
+c15 * * r *
+
+c16 _ $ l c17
+
+c17 # * * halt-accept 
+c17 * * l * 
+
+c2 $ * l expand
+c2 * * r *
+
+init * * l *
+init _ * l init1
+
+init1 _ # r init2
+
+init2 _ * r init3
+init2 * * r *
+
+init3 _ ? r init4
+init3 * * r init2
+
+init4 _ 1 r init5
+
+init5 _ $ l init6
+
+init6 # * r moveWord
+init6 * * l *
+
+expand 1 0 r expand1
+expand _ - r expand2
+expand * * l *
+
+expand1 _ o l expand
+expand1 0 1 r *
+expand1 * * r *
+
+expand2 _ * l expand3
+expand2 $ o r *
+expand2 * * r *
+
+expand3 o $ l expand4
+
+expand4 - * l c1
+expand4 * o r expand5
+expand4 o * l *
+
+expand5 $ _ l expand3
+expand5 * * r *
+
+moveWord _ @ r moveWord1
+
+moveWord1 _ % l move
+moveWord1 * * r *
+
+move @ _ r move2
+move * * l *
+
+m$ $ _ r m$1
+m$ * * r *
+
+m$1 _ $ l move3
+m$1 * * r *
+
+move3 ? * r control
+move3 * * l *
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+move2 0 @ r m0
+move2 1 @ r m1
+move2 a @ r ma
+move2 b @ r mb
+move2 c @ r mc
+move2 d @ r md
+move2 % _ r m$
+
+m0 $ * r m01
+m0 * * r *
+
+m01 _ 0 l move 
+m01 * * r *
+
+m1 $ * r m11
+m1 * * r *
+
+m11 _ 1 l move 
+m11 * * r *
+
+ma $ * r ma1
+ma * * r *
+
+ma1 _ a l move 
+ma1 * * r *
+
+mb $ * r mb1
+mb * * r *
+
+mb1 _ b l move 
+mb1 * * r *
+
+mc $ * r mc1
+mc * * r *
+
+mc1 _ c l move 
+mc1 * * r *
+
+md $ * r md1
+md * * r *
+
+md1 _ d l move 
+md1 * * r *

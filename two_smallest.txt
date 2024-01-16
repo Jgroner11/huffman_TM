@@ -1,0 +1,155 @@
+; Marks the two smallest ch
+; ex. #a-oo b-o c-oooo d-ooo $
+; Mark the first two as smallest (~) and second smallest (&)
+0 - * r 0b
+
+
+0 * * r *
+
+0b _ * l 4
+0b * * r *
+
+1 - * r 2
+1 * * r *
+
+2 o x l 3
+2 _ ~ l 5
+2 x * r *
+
+
+
+3 _ * l 3b
+3 * * l *
+
+3b _ * l 4
+
+4 o x r 1
+4 - ~ r 8
+4 x * l *
+
+5 - ~ l 6
+5 x o l *
+
+6 _ * l 6b
+6 * * l *
+
+6b _ & l 7
+
+7 - & r 11
+7 * o l *
+
+8 _ ~ r 9
+8 x o r *
+
+9 - & r 10
+9 * * r *
+
+10 _ & r 11
+10 * o r *
+
+; Look for next character
+11 $ * * halt-accept 
+11 - @ l 13
+11 * * r *
+
+; Compare to smallest (~)
+
+12 o x l 13
+12 _ ~ l 16
+12 x * r *
+
+13 ~ * l 14
+13 * * l *
+
+14 o x r 15
+14 x * l *
+14 ~ * r 20
+
+15 @ * r 12
+15 * * r *
+
+; smallest
+
+; reset new smallest
+16 @ * l 17
+16 x o l *
+
+17 & _ l 17&
+17 ~ & l 17~
+17 # * r 18
+17 * * l *
+
+17& & - l 17
+17& * * l *
+
+17~ ~ & l 17
+17~ x o l *
+17~ o * l *
+
+18 @ ~ r 19
+18 * * r *
+
+19 ~ * r 11
+19 * * r *
+
+
+; not smallest
+
+; reset old smallest
+
+20 ~ * r 21
+20 x o r *
+
+21 @ * r 22
+21 * * r *
+
+22 _ * l 23
+22 * o r *
+
+; compare to second smallest
+
+23 & * l 14&
+23 * * l *
+
+12& o x l 13&
+12& _ & l 24
+12& x * r *
+
+13& & * l 14&
+13& * * l *
+
+14& o x r 15&
+14& x * l *
+14& & * r 28
+
+15& @ * r 12&
+15& * * r *
+
+; 2nd smallest
+
+; reset new second smallest
+
+24 @ * l 25
+24 x o l *
+
+25 & _ l 26
+25 * * l *
+
+26 & - r 27
+26 * o l *
+
+27 @ & r 11
+27 * * r *
+
+; not 2nd smallest
+
+; reset old 2nd smallest
+
+28 & * r 29
+28 x o r *
+
+29 @ - r 30
+29 * * r *
+
+30 _ * r 11
+30 * o r *
