@@ -1,0 +1,31 @@
+writeLeft _ * l writeLeft1
+writeLeft * * l *
+
+writeLeft1 _ $ l writeLeft2
+writeLeft1 # * r moveWord
+writeLeft1 * * l *
+
+writeLeft3 $ _ l writeLeft
+writeLeft3 * * r *
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+writeLeft2 a * l wla
+writeLeft2 b * l wlb
+writeLeft2 c * l wlc
+
+wla # * l wla1
+wla * * l *
+
+wla1 _ a r writeLeft3 
+wla1 * * l *
+
+wlb # * l wlb1
+wlb * * l *
+
+wlb1 _ b r writeLeft3 
+wlb1 * * l *
+
+wlc # * l wlc1
+wlc * * l *
+
+wlc1 _ c r writeLeft3 
+wlc1 * * l *

@@ -24,11 +24,6 @@ Each data point is converted into a space separated list of units
     Each unit is x-oooo where x is the charachter
 
     ex. a-ooo b-oooo
-
-To do:
-    Integrate and clean two_smallest and merge into huffman_encoding
-        Choose how many spaces after # and before $ for each part of code
-    Clean up controls, especially c1
     
 Control is the character to the left of $
 Move no longer moves $, after finding that there are no more characters, move goes right until it finds $, then goes left one to control
@@ -37,3 +32,9 @@ This circuit forces huffman_encoding to leave two spaces, and merge will ultimat
 Need a copy circuit for just ones and zeros
 But to store order, need a copy circuit for entire language
 
+To do:
+    Make it so each letter is put in parentheses
+    Clean after merge
+    Unmerge
+    Clean after Unmerge
+    Reorder -> Make it so all alphabet dependent text is written into the individual files and then all is copied into a single global file

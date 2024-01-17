@@ -1,6 +1,6 @@
 import pyperclip
 
-restricted = ['%', '@']
+restricted = ['%', '@', '#', '$']
 
 def create_move_cicuit(alphabet):
     with open('move_circuit_draft.txt', 'w') as f:
@@ -22,8 +22,6 @@ def create_move_cicuit(alphabet):
 #         for x in alphabet:
 #             f.write(';m' + x + '\n')
 #             f.write('\n')
-        
-
 
 def create_copy_cicuit(alphabet):
     with open('copy_circuit_draft.txt', 'w') as f:
@@ -42,8 +40,43 @@ def create_copy_cicuit(alphabet):
             s += line
         pyperclip.copy(s)
 
+def create_writeLeft_cicuit(alphabet):
+    with open('writeLeft_circuit_draft.txt', 'w') as f:
+        for c in alphabet:
+            f.write('writeLeft2 ' + c + ' * l wl' + c + '\n')
+        for c in alphabet:
+            f.write('\nwl' + c + ' # * l wl' + c + '1\n')
+            f.write('wl' + c + ' * * l *\n\n')
+            f.write('wl' + c + '1 _ '+ c +' r writeLeft3 \n')
+            f.write('wl' + c + '1 * * l *\n')
+    with open ('writeLeft_circuit_draft.txt', 'r') as f:
+        s = ''
+        for line in f.readlines():
+            s += line
+        pyperclip.copy(s)
+
+def create_moveToFront_cicuit(alphabet):
+    with open('moveToFront_circuit_draft.txt', 'w') as f:
+        for c in alphabet:
+            f.write('moveToFront1 ' + c + ' @ r mf' + c + '\n')
+        f.write('moveToFront1 % _ r moveToFront2\n')
+        for c in alphabet:
+            f.write('\nmf' + c + ' # * l mf' + c + '1\n')
+            f.write('mf' + c + ' * * r *\n\n')
+            f.write('mf' + c + '1 _ '+ c +' l moveToFront \n')
+            f.write('mf' + c + '1 * * l *\n')
+    with open ('moveToFront_circuit_draft.txt', 'r') as f:
+        s = ''
+        for line in f.readlines():
+            s += line
+        pyperclip.copy(s)
+
+
 alphabet = ['0', '1', 'a', 'b', 'c', 'd', 'o', '(', ')']
 # create_move_cicuit(alphabet)
+# create_copy_cicuit(alphabet)
+# create_writeLeft_cicuit(alphabet)
 
-alphabet = ['0', '1']
-create_copy_cicuit(alphabet)
+alphabet = ['a', 'b', 'c']
+
+create_moveToFront_cicuit(alphabet)

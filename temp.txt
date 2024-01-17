@@ -1,16 +1,1 @@
-alphabet = ['0', '1']
-def create_copy_cicuit(alphabet):
-    with open('copy_circuit_draft.txt', 'w') as f:
-        for c in alphabet:
-            f.write('copy1 ' + c + ' @ r m' + c + '\n')
-        f.write('copy1 % _ r copy2\n')
-        for c in alphabet:
-            f.write('\nm' + c + ' $ * r m' + c + '1\n')
-            f.write('m' + c + ' * * r *\n\n')
-            f.write('m' + c + '1 _ '+ c +' l copy \n')
-            f.write('m' + c + '1 * * r *\n')
-    with open ('copy_circuit_draft.txt', 'r') as f:
-        s = ''
-        for line in f.readlines():
-            s += line
-        pyperclip.copy(s)
+quack

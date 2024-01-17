@@ -1,0 +1,29 @@
+moveToFront @ _ l moveToFront1
+moveToFront * * l *
+
+moveToFront2 # * r control
+moveToFront2 * * r *
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+moveToFront1 a @ r mfa
+moveToFront1 b @ r mfb
+moveToFront1 c @ r mfc
+moveToFront1 % _ r moveToFront2
+
+mfa # * l mfa1
+mfa * * r *
+
+mfa1 _ a l moveToFront 
+mfa1 * * l *
+
+mfb # * l mfb1
+mfb * * r *
+
+mfb1 _ b l moveToFront 
+mfb1 * * l *
+
+mfc # * l mfc1
+mfc * * r *
+
+mfc1 _ c l moveToFront 
+mfc1 * * l *

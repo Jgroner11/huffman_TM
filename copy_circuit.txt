@@ -7,6 +7,13 @@ copy2 * * r *
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 copy1 0 @ l w0
 copy1 1 @ l w1
+copy1 a @ l wa
+copy1 b @ l wb
+copy1 c @ l wc
+copy1 d @ l wd
+copy1 o @ l wo
+copy1 ( @ l w(
+copy1 ) @ l w)
 copy1 % _ r copy2
 
 w0 _ 0 r w01
@@ -24,3 +31,59 @@ w11 * * r *
 
 w12 _ 1 l copy 
 w12 * * r *
+
+wa _ a r wa1
+
+wa1 $ * r wa2
+wa1 * * r *
+
+wa2 _ a l copy 
+wa2 * * r *
+
+wb _ b r wb1
+
+wb1 $ * r wb2
+wb1 * * r *
+
+wb2 _ b l copy 
+wb2 * * r *
+
+wc _ c r wc1
+
+wc1 $ * r wc2
+wc1 * * r *
+
+wc2 _ c l copy 
+wc2 * * r *
+
+wd _ d r wd1
+
+wd1 $ * r wd2
+wd1 * * r *
+
+wd2 _ d l copy 
+wd2 * * r *
+
+wo _ o r wo1
+
+wo1 $ * r wo2
+wo1 * * r *
+
+wo2 _ o l copy 
+wo2 * * r *
+
+w( _ ( r w(1
+
+w(1 $ * r w(2
+w(1 * * r *
+
+w(2 _ ( l copy 
+w(2 * * r *
+
+w) _ ) r w)1
+
+w)1 $ * r w)2
+w)1 * * r *
+
+w)2 _ ) l copy 
+w)2 * * r *

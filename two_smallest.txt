@@ -1,155 +1,135 @@
-; Marks the two smallest ch
-; ex. #a-oo b-o c-oooo d-ooo $
+; Marks the two smallest charachters
+; ex. #    a-oo    b-o    c-oooo     d-ooo $
 ; Mark the first two as smallest (~) and second smallest (&)
-0 - * r 0b
+0 * * * twoSmallest
+
+twoSmallest - * r twoSmallest1
+twoSmallest * * r *
+
+twoSmallest1 _ * l twoSmallest2
+twoSmallest1 * * r *
+
+twoSmallest2 o x r twoSmallest3
+twoSmallest2 - ~ r twoSmallest10
+twoSmallest2 * * l *
+
+twoSmallest3 - * r twoSmallest4
+twoSmallest3 * * r *
+
+twoSmallest4 o x l twoSmallest5
+twoSmallest4 _ ~ l twoSmallest6
+twoSmallest4 x * r *
+
+twoSmallest5 _ * l twoSmallest2
+twoSmallest5 * * l *
 
 
-0 * * r *
+twoSmallest6 - ~ l twoSmallest7
+twoSmallest6 x o l *
 
-0b _ * l 4
-0b * * r *
+twoSmallest7 _ * l twoSmallest8
+twoSmallest7 * * l *
 
-1 - * r 2
-1 * * r *
+twoSmallest8 * * r twoSmallest8b
+twoSmallest8 _ * l *
 
-2 o x l 3
-2 _ ~ l 5
-2 x * r *
+twoSmallest8b _ & l twoSmallest9 
 
+twoSmallest9 - & r twoSmallest13
+twoSmallest9 x o l *
+twoSmallest9 o * l *
 
+twoSmallest10 _ ~ r twoSmallest11
+twoSmallest10 x o r *
 
-3 _ * l 3b
-3 * * l *
+twoSmallest11 - & r twoSmallest12
+twoSmallest11 * * r *
 
-3b _ * l 4
+twoSmallest12 _ & r twoSmallest13
+twoSmallest12 * o r *
 
-4 o x r 1
-4 - ~ r 8
-4 x * l *
+twoSmallest13 $ * * halt-accept 
+twoSmallest13 - @ l twoSmallest14
+twoSmallest13 * * r *
 
-5 - ~ l 6
-5 x o l *
+twoSmallest14 ~ * l twoSmallest15
+twoSmallest14 * * l *
 
-6 _ * l 6b
-6 * * l *
+twoSmallest15 o x r twoSmallest16
+twoSmallest15 x * l *
+twoSmallest15 ~ * r twoSmallest22
 
-6b _ & l 7
+twoSmallest16 @ * r twoSmallest17
+twoSmallest16 * * r *
 
-7 - & r 11
-7 * o l *
+twoSmallest17 o x l twoSmallest14
+twoSmallest17 _ ~ l twoSmallest18
+twoSmallest17 x * r *
 
-8 _ ~ r 9
-8 x o r *
+twoSmallest18 @ * l twoSmallest19
+twoSmallest18 x o l *
 
-9 - & r 10
-9 * * r *
+twoSmallest19 & _ l twoSmallest19&
+twoSmallest19 ~ & l twoSmallest19~
+twoSmallest19 # * r twoSmallest20
+twoSmallest19 * * l *
 
-10 _ & r 11
-10 * o r *
+twoSmallest19& & - l twoSmallest19
+twoSmallest19& * * l *
 
-; Look for next character
-11 $ * * halt-accept 
-11 - @ l 13
-11 * * r *
+twoSmallest19~ ~ & l twoSmallest19
+twoSmallest19~ x o l *
+twoSmallest19~ o * l *
 
-; Compare to smallest (~)
+twoSmallest20 @ ~ r twoSmallest21
+twoSmallest20 * * r *
 
-12 o x l 13
-12 _ ~ l 16
-12 x * r *
+twoSmallest21 ~ * r twoSmallest13
+twoSmallest21 * * r *
 
-13 ~ * l 14
-13 * * l *
+twoSmallest22 ~ * r twoSmallest23
+twoSmallest22 x o r *
 
-14 o x r 15
-14 x * l *
-14 ~ * r 20
+twoSmallest23 @ * r twoSmallest24
+twoSmallest23 * * r *
 
-15 @ * r 12
-15 * * r *
+twoSmallest24 _ * l twoSmallest25
+twoSmallest24 * o r *
 
-; smallest
+twoSmallest25 & * l twoSmallest26
+twoSmallest25 * * l *
 
-; reset new smallest
-16 @ * l 17
-16 x o l *
+twoSmallest26 o x r twoSmallest27
+twoSmallest26 x * l *
+twoSmallest26 & * r twoSmallest34
 
-17 & _ l 17&
-17 ~ & l 17~
-17 # * r 18
-17 * * l *
+twoSmallest27 @ * r twoSmallest28
+twoSmallest27 * * r *
 
-17& & - l 17
-17& * * l *
+twoSmallest28 o x l twoSmallest29
+twoSmallest28 _ & l twoSmallest30
+twoSmallest28 x * r *
 
-17~ ~ & l 17
-17~ x o l *
-17~ o * l *
+twoSmallest29 & * l twoSmallest26
+twoSmallest29 * * l *
 
-18 @ ~ r 19
-18 * * r *
+twoSmallest30 @ * l twoSmallest31
+twoSmallest30 x o l *
 
-19 ~ * r 11
-19 * * r *
+twoSmallest31 & _ l twoSmallest32
+twoSmallest31 * * l *
 
+twoSmallest32 & - r twoSmallest33
+twoSmallest32 * o l *
 
-; not smallest
+twoSmallest33 @ & r twoSmallest13
+twoSmallest33 * * r *
 
-; reset old smallest
+twoSmallest34 & * r twoSmallest35
+twoSmallest34 x o r *
 
-20 ~ * r 21
-20 x o r *
+twoSmallest35 @ - r twoSmallest36
+twoSmallest35 * * r *
 
-21 @ * r 22
-21 * * r *
-
-22 _ * l 23
-22 * o r *
-
-; compare to second smallest
-
-23 & * l 14&
-23 * * l *
-
-12& o x l 13&
-12& _ & l 24
-12& x * r *
-
-13& & * l 14&
-13& * * l *
-
-14& o x r 15&
-14& x * l *
-14& & * r 28
-
-15& @ * r 12&
-15& * * r *
-
-; 2nd smallest
-
-; reset new second smallest
-
-24 @ * l 25
-24 x o l *
-
-25 & _ l 26
-25 * * l *
-
-26 & - r 27
-26 * o l *
-
-27 @ & r 11
-27 * * r *
-
-; not 2nd smallest
-
-; reset old 2nd smallest
-
-28 & * r 29
-28 x o r *
-
-29 @ - r 30
-29 * * r *
-
-30 _ * r 11
-30 * o r *
+twoSmallest36 _ * r twoSmallest13
+twoSmallest36 * o r *

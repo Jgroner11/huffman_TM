@@ -1,18 +1,242 @@
-; Puts the marked characters at the end together
-; Adds parentheses
-; Moves all os to the end
-; ex. # a&oo& b~o~ c-oooo  d-ooo  $
+; TM that takes in set of characters and their frequencies and outputs the optimal prefix code
+; Input format: space separated list of pairs c1 f1 c2 f2 . . . where each fi is the frequency of character ci
+;   characters must me members of the acceptable alphabet, currently [a,b,c]
+;   frequencies must be whole numbers represented in binary. The limiting factor in how long this program takes is the size of these binary digits so scale down and round if the program is taking to long
+;    ex: a 1001 b 111 c 1
+;    ex: a 10 b 1 c 100 d 011 
+; Output format: space separated list of pairs c1 e1 c2 e2 . . . where ei is the binary encoding for character ci
 
+0 * * * init
+;* * * * halt-invalidFormat
 
-0 $ * l 1
-0 * * r * 
+control 1 2 r c1
+control 2 _ r c2
+control 3 _ r twoSmallest !
+control 4 5 l find~
+control 5 6 r write)
+control 6 7 l find~2
+control 7 _ r c7
 
-control 1 2 l find~
-control 2 3 r write)
-control 3 4 l find~2
-control 4 _ r c4
+c1 _ - l c11
+c1 * * r *
 
-1 * 1 r write(
+c11 # _ r c12
+c11 * * l *
+
+c12 * * l c15
+c12 ^ # r c17
+c12 _ * r *
+
+c15 _ * l c16
+
+c16 _ # r moveWord
+
+c17 $ * l c18
+c17 * * r *
+
+c18 _ $ l c19
+c18 * _ r *
+
+c19 # * r c110
+c19 * * l *
+
+c110 _ 3 l pullOrder
+
+c2 _ $ l expand
+c2 $ _ r *
+c2 * * r *
+
+c21 _ 1 r c22 
+c21 * * r *
+
+c22 _ $ l c11
+
+c7 _ * r c71
+c7 $ _ r *
+c7 * * r * 
+
+c71 _ * r c72
+
+c72 _ $ * halt-accept
+
+init * * l *
+init _ * l init1
+
+init1 _ # r init2
+
+init2 _ * r init3
+init2 * * r *
+
+init3 _ ^ r init4
+init3 * * r init2
+
+init4 _ 1 r init5
+
+init5 _ $ l writeLeft
+
+moveWord _ @ r moveWord1
+
+moveWord1 _ % l move
+moveWord1 * * r *
+
+pullOrder # * l pullOrder1 
+
+pullOrder1 * * l pullOrder2
+pullOrder1 _ * l *
+
+pullOrder2 _ % r pullOrder3
+pullOrder2 * * l *
+
+pullOrder3 _ * l moveToFront1
+pullOrder3 * * r *
+
+expand 1 0 r expand1
+expand - * r expand2
+expand * * l *
+
+expand1 _ o l expand
+expand1 0 1 r *
+expand1 * * r *
+
+expand2 _ * l expand3
+expand2 $ o r *
+expand2 * * r *
+
+expand3 o _ l expand4
+
+expand4 - * r c21
+expand4 * o r expand2
+expand4 o * l *
+
+twoSmallest - * r twoSmallest1
+twoSmallest * * r *
+
+twoSmallest1 _ * l twoSmallest2
+twoSmallest1 * * r *
+
+twoSmallest2 o x r twoSmallest3
+twoSmallest2 - ~ r twoSmallest10
+twoSmallest2 x * l *
+
+twoSmallest3 - * r twoSmallest4
+twoSmallest3 * * r *
+
+twoSmallest4 o x l twoSmallest5
+twoSmallest4 _ ~ l twoSmallest6
+twoSmallest4 x * r *
+
+twoSmallest5 _ * l twoSmallest6
+twoSmallest5 * * l *
+
+twoSmallest6 _ * l twoSmallest2
+
+twoSmallest6 - ~ l twoSmallest7
+twoSmallest6 x o l *
+
+twoSmallest7 _ * l twoSmallest8
+twoSmallest7 * * l *
+
+twoSmallest8 _ & l twoSmallest9
+
+twoSmallest9 - & r twoSmallest13
+twoSmallest9 * o l *
+
+twoSmallest10 _ ~ r twoSmallest11
+twoSmallest10 x o r *
+
+twoSmallest11 - & r twoSmallest12
+twoSmallest11 * * r *
+
+twoSmallest12 _ & r twoSmallest13
+twoSmallest12 * o r *
+
+twoSmallest13 $ * l merge
+twoSmallest13 - @ l twoSmallest14
+twoSmallest13 * * r *
+
+twoSmallest14 ~ * l twoSmallest15
+twoSmallest14 * * l *
+
+twoSmallest15 o x r twoSmallest16
+twoSmallest15 x * l *
+twoSmallest15 ~ * r twoSmallest22
+
+twoSmallest16 @ * r twoSmallest17
+twoSmallest16 * * r *
+
+twoSmallest17 o x l twoSmallest14
+twoSmallest17 _ ~ l twoSmallest18
+twoSmallest17 x * r *
+
+twoSmallest18 @ * l twoSmallest19
+twoSmallest18 x o l *
+
+twoSmallest19 & _ l twoSmallest19&
+twoSmallest19 ~ & l twoSmallest19~
+twoSmallest19 # * r twoSmallest20
+twoSmallest19 * * l *
+
+twoSmallest19& & - l twoSmallest19
+twoSmallest19& * * l *
+
+twoSmallest19~ ~ & l twoSmallest19
+twoSmallest19~ x o l *
+twoSmallest19~ o * l *
+
+twoSmallest20 @ ~ r twoSmallest21
+twoSmallest20 * * r *
+
+twoSmallest21 ~ * r twoSmallest13
+twoSmallest21 * * r *
+
+twoSmallest22 ~ * r twoSmallest23
+twoSmallest22 x o r *
+
+twoSmallest23 @ * r twoSmallest24
+twoSmallest23 * * r *
+
+twoSmallest24 _ * l twoSmallest25
+twoSmallest24 * o r *
+
+twoSmallest25 & * l twoSmallest26
+twoSmallest25 * * l *
+
+twoSmallest26 o x r twoSmallest27
+twoSmallest26 x * l *
+twoSmallest26 & * r twoSmallest34
+
+twoSmallest27 @ * r twoSmallest28
+twoSmallest27 * * r *
+
+twoSmallest28 o x l twoSmallest29
+twoSmallest28 _ & l twoSmallest30
+twoSmallest28 x * r *
+
+twoSmallest29 & * l twoSmallest26
+twoSmallest29 * * l *
+
+twoSmallest30 @ * l twoSmallest31
+twoSmallest30 x o l *
+
+twoSmallest31 & _ l twoSmallest32
+twoSmallest31 * * l *
+
+twoSmallest32 & - r twoSmallest33
+twoSmallest32 * o l *
+
+twoSmallest33 @ & r twoSmallest13
+twoSmallest33 * * r *
+
+twoSmallest34 & * r twoSmallest35
+twoSmallest34 x o r *
+
+twoSmallest35 @ - r twoSmallest36
+twoSmallest35 * * r *
+
+twoSmallest36 _ * r twoSmallest13
+twoSmallest36 * o r *
+
+merge * 4 r write(
 
 write( _ ( l find&
 write( * * r *
@@ -43,14 +267,69 @@ move~ ~ % l *
 move~ * * l *
 
 
-c4 _ * r c41
-c4 $ _ r *
-c4 * * r * 
 
-c41 _ * r c42
 
-c42 _ $ * halt-accept
+moveToFront @ _ l moveToFront1
+moveToFront * * l *
 
+moveToFront2 # * r control
+moveToFront2 * * r *
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+moveToFront1 a @ r mfa
+moveToFront1 b @ r mfb
+moveToFront1 c @ r mfc
+moveToFront1 % _ r moveToFront2
+
+mfa # * l mfa1
+mfa * * r *
+
+mfa1 _ a l moveToFront 
+mfa1 * * l *
+
+mfb # * l mfb1
+mfb * * r *
+
+mfb1 _ b l moveToFront 
+mfb1 * * l *
+
+mfc # * l mfc1
+mfc * * r *
+
+mfc1 _ c l moveToFront 
+mfc1 * * l *
+
+writeLeft _ * l writeLeft1
+writeLeft * * l *
+
+writeLeft1 _ $ l writeLeft2
+writeLeft1 # * r moveWord
+writeLeft1 * * l *
+
+writeLeft3 $ _ l writeLeft
+writeLeft3 * * r *
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+writeLeft2 a * l wla
+writeLeft2 b * l wlb
+writeLeft2 c * l wlc
+
+wla # * l wla1
+wla * * l *
+
+wla1 _ a r writeLeft3 
+wla1 * * l *
+
+wlb # * l wlb1
+wlb * * l *
+
+wlb1 _ b r writeLeft3 
+wlb1 * * l *
+
+wlc # * l wlc1
+wlc * * l *
+
+wlc1 _ c r writeLeft3 
+wlc1 * * l *
 
 
 move @ _ r move1
@@ -124,3 +403,94 @@ m) * * r *
 
 m)1 _ ) l move 
 m)1 * * r *
+
+copy @ _ r copy1
+copy * * l *
+
+copy2 $ * l control
+copy2 * * r *
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+copy1 0 @ l w0
+copy1 1 @ l w1
+copy1 a @ l wa
+copy1 b @ l wb
+copy1 c @ l wc
+copy1 d @ l wd
+copy1 o @ l wo
+copy1 ( @ l w(
+copy1 ) @ l w)
+copy1 % _ r copy2
+
+w0 _ 0 r w01
+
+w01 $ * r w02
+w01 * * r *
+
+w02 _ 0 l copy 
+w02 * * r *
+
+w1 _ 1 r w11
+
+w11 $ * r w12
+w11 * * r *
+
+w12 _ 1 l copy 
+w12 * * r *
+
+wa _ a r wa1
+
+wa1 $ * r wa2
+wa1 * * r *
+
+wa2 _ a l copy 
+wa2 * * r *
+
+wb _ b r wb1
+
+wb1 $ * r wb2
+wb1 * * r *
+
+wb2 _ b l copy 
+wb2 * * r *
+
+wc _ c r wc1
+
+wc1 $ * r wc2
+wc1 * * r *
+
+wc2 _ c l copy 
+wc2 * * r *
+
+wd _ d r wd1
+
+wd1 $ * r wd2
+wd1 * * r *
+
+wd2 _ d l copy 
+wd2 * * r *
+
+wo _ o r wo1
+
+wo1 $ * r wo2
+wo1 * * r *
+
+wo2 _ o l copy 
+wo2 * * r *
+
+w( _ ( r w(1
+
+w(1 $ * r w(2
+w(1 * * r *
+
+w(2 _ ( l copy 
+w(2 * * r *
+
+w) _ ) r w)1
+
+w)1 $ * r w)2
+w)1 * * r *
+
+w)2 _ ) l copy 
+w)2 * * r *
+
