@@ -1,3 +1,4 @@
+# Make sure to run this in the circuit directory
 import pyperclip
 
 restricted = ['%', '@', '#', '$']
@@ -107,8 +108,11 @@ def create_find_circuit(alphabet):
         for c in alphabet:
             f.write('find ' + c + ' _ r f' + c + '\n')
         for c in alphabet:
-            f.write('\nf' + c + ' '+c+' * l moveWord\n')
-            f.write('f' + c + ' * * r *\n')
+            f.write('\nf' + c + ' ' + c + ' * l moveWord\n')
+            f.write('f' + c + ' * * r f' + c + '1\n')
+            f.write('f' + c + ' _ * r *\n\n')
+            f.write('f' + c + '1 _ * r f' + c + '\n')
+            f.write('f' + c + '1 * * r *\n')
     static = ''
     with open ('find_circuit_static.txt', 'r') as f:
         for line in f.readlines():
@@ -166,5 +170,6 @@ def create_huffman_encoding_dynamic(alphabet):
         f.write('\n')
             
 
+# Make sure to run this in the circuit directory
 alphabet = ['0', '1', 'a', 'b', 'c', 'd', 'o', '(', ')', '-']
 create_huffman_encoding_dynamic(alphabet)

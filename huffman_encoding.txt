@@ -21,32 +21,32 @@ control 9 a r c9
 control a _ r ca
 control b * r cb
 
-c1 _ ) r c11a
+c1 _ ) r c11
 c1 * * r *
 
-c11a _ - l c11
+c11 _ - l c12
 
-c11 # _ r c12
-c11 * * l *
+c12 # _ r c13
+c12 * * l *
 
-c12 * * l c15
-c12 ^ # r c17
-c12 _ * r *
+c13 * * l c16
+c13 ^ # r c18
+c13 _ * r *
 
-c15 _ * l c16
+c16 _ * l c17
 
-c16 _ # r moveWord
+c17 _ # r moveWord
 
-c17 $ * l c18
-c17 * * r *
+c18 $ * l c19
+c18 * * r *
 
-c18 _ $ l c19
-c18 * _ r *
+c19 _ $ l c110
+c19 * _ r *
 
-c19 # * r c110
-c19 * * l *
+c110 # * r c111
+c110 * * l *
 
-c110 _ 3 l pullOrder
+c111 _ 3 l pullOrder
 
 c2 _ $ l expand
 c2 $ _ r *
@@ -57,7 +57,7 @@ c21 * * r *
 
 c22 _ $ r c23
 
-c23 _ ( l c11
+c23 _ ( l c12
 
 c7 _ * r c71
 c7 $ _ r *
@@ -345,7 +345,7 @@ prepUnmerge5 * * l *
 prepUnmerge8 _ # l pullOrder1
 
 unmerge ( # r unmerge1
-unmerge $ * r reorder !
+unmerge $ * r reorder
 unmerge * * r *
 
 ; Look for ( or character to tell if we need to unmerge current segment
@@ -397,89 +397,13 @@ finish2 $ _ r halt-accept
 finish2 - _ l *
 finish2 * * l *
 
-find a _ r fa
-find b _ r fb
-find c _ r fc
-
-fa a * l moveWord
-fa * * r *
-
-fb b * l moveWord
-fb * * r *
-
-fc c * l moveWord
-fc * * r *
-
-moveToFront @ _ l moveToFront1
-moveToFront * * l *
-
-moveToFront2 # * r control
-moveToFront2 * * r *
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-moveToFront1 a @ r mfa
-moveToFront1 b @ r mfb
-moveToFront1 c @ r mfc
-moveToFront1 % _ r moveToFront2
-
-mfa # * l mfa1
-mfa * * r *
-
-mfa1 _ a l moveToFront 
-mfa1 * * l *
-
-mfb # * l mfb1
-mfb * * r *
-
-mfb1 _ b l moveToFront 
-mfb1 * * l *
-
-mfc # * l mfc1
-mfc * * r *
-
-mfc1 _ c l moveToFront 
-mfc1 * * l *
-
-writeLeft _ * l writeLeft1
-writeLeft * * l *
-
-writeLeft1 _ $ l writeLeft2
-writeLeft1 # * r moveWord
-writeLeft1 * * l *
-
-writeLeft3 $ _ l writeLeft
-writeLeft3 * * r *
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-writeLeft2 a * l wla
-writeLeft2 b * l wlb
-writeLeft2 c * l wlc
-
-wla # * l wla1
-wla * * l *
-
-wla1 _ a r writeLeft3 
-wla1 * * l *
-
-wlb # * l wlb1
-wlb * * l *
-
-wlb1 _ b r writeLeft3 
-wlb1 * * l *
-
-wlc # * l wlc1
-wlc * * l *
-
-wlc1 _ c r writeLeft3 
-wlc1 * * l *
-
-
+; Dynamically created circuits start here
 move @ _ r move1
 move * * l *
 
 move2 $ * l control
 move2 * * r *
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 move1 0 @ r m0
 move1 1 @ r m1
 move1 a @ r ma
@@ -489,6 +413,7 @@ move1 d @ r md
 move1 o @ r mo
 move1 ( @ r m(
 move1 ) @ r m)
+move1 - @ r m-
 move1 % _ r move2
 
 m0 $ * r m01
@@ -545,13 +470,18 @@ m) * * r *
 m)1 _ ) l move 
 m)1 * * r *
 
+m- $ * r m-1
+m- * * r *
+
+m-1 _ - l move 
+m-1 * * r *
+
 copy @ _ r copy1
 copy * * l *
 
 copy2 $ * l control
 copy2 * * r *
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 copy1 0 @ l w0
 copy1 1 @ l w1
 copy1 a @ l wa
@@ -561,6 +491,7 @@ copy1 d @ l wd
 copy1 o @ l wo
 copy1 ( @ l w(
 copy1 ) @ l w)
+copy1 - @ l w-
 copy1 % _ r copy2
 
 w0 _ 0 r w01
@@ -634,3 +565,252 @@ w)1 * * r *
 
 w)2 _ ) l copy 
 w)2 * * r *
+
+w- _ - r w-1
+
+w-1 $ * r w-2
+w-1 * * r *
+
+w-2 _ - l copy 
+w-2 * * r *
+
+writeLeft _ * l writeLeft1
+writeLeft * * l *
+
+writeLeft1 _ $ l writeLeft2
+writeLeft1 # * r moveWord
+writeLeft1 * * l *
+
+writeLeft3 $ _ l writeLeft
+writeLeft3 * * r *
+
+writeLeft2 0 * l wl0
+writeLeft2 1 * l wl1
+writeLeft2 a * l wla
+writeLeft2 b * l wlb
+writeLeft2 c * l wlc
+writeLeft2 d * l wld
+writeLeft2 o * l wlo
+writeLeft2 ( * l wl(
+writeLeft2 ) * l wl)
+writeLeft2 - * l wl-
+
+wl0 # * l wl01
+wl0 * * l *
+
+wl01 _ 0 r writeLeft3 
+wl01 * * l *
+
+wl1 # * l wl11
+wl1 * * l *
+
+wl11 _ 1 r writeLeft3 
+wl11 * * l *
+
+wla # * l wla1
+wla * * l *
+
+wla1 _ a r writeLeft3 
+wla1 * * l *
+
+wlb # * l wlb1
+wlb * * l *
+
+wlb1 _ b r writeLeft3 
+wlb1 * * l *
+
+wlc # * l wlc1
+wlc * * l *
+
+wlc1 _ c r writeLeft3 
+wlc1 * * l *
+
+wld # * l wld1
+wld * * l *
+
+wld1 _ d r writeLeft3 
+wld1 * * l *
+
+wlo # * l wlo1
+wlo * * l *
+
+wlo1 _ o r writeLeft3 
+wlo1 * * l *
+
+wl( # * l wl(1
+wl( * * l *
+
+wl(1 _ ( r writeLeft3 
+wl(1 * * l *
+
+wl) # * l wl)1
+wl) * * l *
+
+wl)1 _ ) r writeLeft3 
+wl)1 * * l *
+
+wl- # * l wl-1
+wl- * * l *
+
+wl-1 _ - r writeLeft3 
+wl-1 * * l *
+
+moveToFront @ _ l moveToFront1
+moveToFront * * l *
+
+moveToFront2 # * r control
+moveToFront2 * * r *
+
+moveToFront1 0 @ r mf0
+moveToFront1 1 @ r mf1
+moveToFront1 a @ r mfa
+moveToFront1 b @ r mfb
+moveToFront1 c @ r mfc
+moveToFront1 d @ r mfd
+moveToFront1 o @ r mfo
+moveToFront1 ( @ r mf(
+moveToFront1 ) @ r mf)
+moveToFront1 - @ r mf-
+moveToFront1 % _ r moveToFront2
+
+mf0 # * l mf01
+mf0 * * r *
+
+mf01 _ 0 l moveToFront 
+mf01 * * l *
+
+mf1 # * l mf11
+mf1 * * r *
+
+mf11 _ 1 l moveToFront 
+mf11 * * l *
+
+mfa # * l mfa1
+mfa * * r *
+
+mfa1 _ a l moveToFront 
+mfa1 * * l *
+
+mfb # * l mfb1
+mfb * * r *
+
+mfb1 _ b l moveToFront 
+mfb1 * * l *
+
+mfc # * l mfc1
+mfc * * r *
+
+mfc1 _ c l moveToFront 
+mfc1 * * l *
+
+mfd # * l mfd1
+mfd * * r *
+
+mfd1 _ d l moveToFront 
+mfd1 * * l *
+
+mfo # * l mfo1
+mfo * * r *
+
+mfo1 _ o l moveToFront 
+mfo1 * * l *
+
+mf( # * l mf(1
+mf( * * r *
+
+mf(1 _ ( l moveToFront 
+mf(1 * * l *
+
+mf) # * l mf)1
+mf) * * r *
+
+mf)1 _ ) l moveToFront 
+mf)1 * * l *
+
+mf- # * l mf-1
+mf- * * r *
+
+mf-1 _ - l moveToFront 
+mf-1 * * l *
+
+find 0 _ r f0
+find 1 _ r f1
+find a _ r fa
+find b _ r fb
+find c _ r fc
+find d _ r fd
+find o _ r fo
+find ( _ r f(
+find ) _ r f)
+find - _ r f-
+
+f0 0 * l moveWord
+f0 * * r f01
+f0 _ * r *
+
+f01 _ * r f0
+f01 * * r *
+
+f1 1 * l moveWord
+f1 * * r f11
+f1 _ * r *
+
+f11 _ * r f1
+f11 * * r *
+
+fa a * l moveWord
+fa * * r fa1
+fa _ * r *
+
+fa1 _ * r fa
+fa1 * * r *
+
+fb b * l moveWord
+fb * * r fb1
+fb _ * r *
+
+fb1 _ * r fb
+fb1 * * r *
+
+fc c * l moveWord
+fc * * r fc1
+fc _ * r *
+
+fc1 _ * r fc
+fc1 * * r *
+
+fd d * l moveWord
+fd * * r fd1
+fd _ * r *
+
+fd1 _ * r fd
+fd1 * * r *
+
+fo o * l moveWord
+fo * * r fo1
+fo _ * r *
+
+fo1 _ * r fo
+fo1 * * r *
+
+f( ( * l moveWord
+f( * * r f(1
+f( _ * r *
+
+f(1 _ * r f(
+f(1 * * r *
+
+f) ) * l moveWord
+f) * * r f)1
+f) _ * r *
+
+f)1 _ * r f)
+f)1 * * r *
+
+f- - * l moveWord
+f- * * r f-1
+f- _ * r *
+
+f-1 _ * r f-
+f-1 * * r *
+
