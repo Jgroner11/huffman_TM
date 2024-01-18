@@ -33,8 +33,7 @@ Need a copy circuit for just ones and zeros
 But to store order, need a copy circuit for entire language
 
 To do:
-    Make it so each letter is put in parentheses
-    Clean after merge
-    Unmerge
     Clean after Unmerge
     Reorder -> Make it so all alphabet dependent text is written into the individual files and then all is copied into a single global file
+    Rename control 1 states
+    Consider changing choice of zero/one

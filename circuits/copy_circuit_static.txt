@@ -1,0 +1,5 @@
+copy @ _ r copy1
+copy * * l *
+
+copy2 $ * l control
+copy2 * * r *

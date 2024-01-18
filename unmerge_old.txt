@@ -1,80 +1,80 @@
 ; Decomposes the merged characters into a prefix code
-; ex.  ((((a)(b))(d))(c)) 9$(
-; ex.  (((a)(b))((c)(d))) 9$(
-; ex.  (((a)((d)(c)))(b)) 9$(
+; ex.  ((((a)(b))(d))(c)) 1$(
+; ex.  (((a)(b))((c)(d))) 1$(
+; ex.  (((a)((d)(c)))(b)) 1$(
 ; The ( signifies the start, always look for first parentheses
-0 * * * unmerge
 
-control 9 a r c9
-control a _ r ca
 
-c9 _ ) l c91
-c9 * * r *
+control 1 2 r c1
+control 2 _ r c2
 
-c91 # * r c92
-c91 * * l *
+c1 _ ) l c11
+c1 * * r *
 
-c92 ( * r c93
-c92 * * r *
+c11 # * r c12
+c11 * * l *
 
-c93 _ % l c94
-c93 * * r *
+c12 ( * r c13
+c12 * * r *
 
-c94 ) _ r copy1
-c94 * * l *
+c13 _ % l c14
+c13 * * r *
 
-ca _ 1 r ca1
-ca $ _ r *
-ca * * r *
+c14 ) _ r copy1
+c14 * * l *
 
-ca1 _ * r ca2
+c2 _ 1 r c2a
+c2 $ _ r *
+c2 * * r *
 
-ca2 _ 9 r ca3
+c2a _ * r c2b
 
-ca3 _ $ r ca4
+c2b _ 1 r c2c
 
-ca4 _ ( l ca5 
+c2c _ $ r c2d
 
-ca5 # _ r ca6
-ca5 * * l *
+c2d _ ( l c21 
 
-ca6 ( * r ca7
-ca6 * * r *
+c21 # _ r c22
+c21 * * l *
 
-ca7 _ 0 l ca8
-ca7 * * r *
+c22 ( * r c23
+c22 * * r *
 
-ca8 _ * r unmerge
-ca8 * * l *
+c23 _ 0 l c24
+c23 * * r *
 
-unmerge ( # r unmerge1
-unmerge $ * * halt-accept
-unmerge * * r *
+c24 _ * r 0
+c24 * * l *
+
+0 ( # r 1
+0 $ * * halt-accept
+0 * * r *
 
 ; Look for ( or character to tell if we need to unmerge current segment
-unmerge1 ( { r unmerge2
-unmerge1 * * l unmerge5
+1 ( { r 2
+1 * * l 5
 
 ; Look for first )
-unmerge2 ) } l unmerge3
-unmerge2 } > r *
-unmerge2 * * r *
+2 ) } l 3
+2 } > r *
+2 * * r *
 
 ; Look for first ( or {
-unmerge3 { @ r unmerge4
-unmerge3 ( < r unmerge2
-unmerge3 * * l *
+3 { @ r 4
+3 ( < r 2
+3 * * l *
 
 ; Reset parentheses and set up move
-unmerge4 } % l move
-unmerge4 < ( r *
-unmerge4 > ) r *
-unmerge4 * * r * 
+4 } % l move
+4 < ( r *
+4 > ) r *
+4 * * r * 
 
-unmerge5 # _ r *
-unmerge5 ) - r *
-unmerge5 _ * r unmerge
-unmerge5 * * r *
+5 # _ r *
+5 ) - r *
+5 _ * r 0
+5 * * r *
 
 
 

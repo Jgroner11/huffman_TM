@@ -1,0 +1,12 @@
+find a _ r fa
+find b _ r fb
+find c _ r fc
+
+fa a * l moveWord
+fa * * r *
+
+fb b * l moveWord
+fb * * r *
+
+fc c * l moveWord
+fc * * r *

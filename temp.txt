@@ -1,1 +1,15 @@
-quack
+def create_find_cicuit(alphabet):
+    with open('find_circuit_draft.txt', 'w') as f:
+        for c in alphabet:
+            f.write('find1 ' + c + ' @ r m' + c + '\n')
+        f.write('find1 % _ r find2\n')
+        for c in alphabet:
+            f.write('\nm' + c + ' $ * r m' + c + '1\n')
+            f.write('m' + c + ' * * r *\n\n')
+            f.write('m' + c + '1 _ '+ c +' l find \n')
+            f.write('m' + c + '1 * * r *\n')
+    with open ('find_circuit_draft.txt', 'r') as f:
+        s = ''
+        for line in f.readlines():
+            s += line
+        pyperclip.copy(s)

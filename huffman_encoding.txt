@@ -16,9 +16,15 @@ control 4 5 l find~
 control 5 6 r write)
 control 6 7 l find~2
 control 7 _ r c7
+control 8 _ r unmerge
+control 9 a r c9
+control a _ r ca
+control b * r cb
 
-c1 _ - l c11
+c1 _ ) r c11a
 c1 * * r *
+
+c11a _ - l c11
 
 c11 # _ r c12
 c11 * * l *
@@ -49,7 +55,9 @@ c2 * * r *
 c21 _ 1 r c22 
 c21 * * r *
 
-c22 _ $ l c11
+c22 _ $ r c23
+
+c23 _ ( l c11
 
 c7 _ * r c71
 c7 $ _ r *
@@ -61,6 +69,48 @@ c72 _ $ l c73
 
 c73 # * r twoSmallest
 c73 * * l *
+
+c9 _ ) l c91
+c9 * * r *
+
+c91 # * r c92
+c91 * * l *
+
+c92 ( * r c93
+c92 * * r *
+
+c93 _ % l c94
+c93 * * r *
+
+c94 ) _ r copy1
+c94 * * l *
+
+ca _ 1 r ca1
+ca $ _ r *
+ca * * r *
+
+ca1 _ * r ca2
+
+ca2 _ 9 r ca3
+
+ca3 _ $ r ca4
+
+ca4 _ ( l ca5 
+
+ca5 # _ r ca6
+ca5 * * l *
+
+ca6 ( * r ca7
+ca6 * * r *
+
+ca7 _ 0 l ca8
+ca7 * * r *
+
+ca8 _ * r unmerge
+ca8 * * l *
+
+cb _ - l reorder1
+cb * * r *
 
 init * * l *
 init _ * l init1
@@ -75,7 +125,9 @@ init3 * * r init2
 
 init4 _ 1 r init5
 
-init5 _ $ l writeLeft
+init5 _ $ r init6
+
+init6 _ ( l writeLeft
 
 moveWord _ @ r moveWord1
 
@@ -91,6 +143,7 @@ pullOrder2 _ % r pullOrder3
 pullOrder2 * * l *
 
 pullOrder3 _ * l moveToFront1
+pullOrder3 # _ l moveToFront1
 pullOrder3 * * r *
 
 expand 1 0 r expand1
@@ -122,7 +175,7 @@ twoSmallest2 - ~ r twoSmallest10
 twoSmallest2 * * l *
 
 twoSmallest3 - * r twoSmallest4
-twoSmallest3 $ * * halt-accept
+twoSmallest3 $ _ l prepUnmerge
 twoSmallest3 * * r *
 
 twoSmallest4 o x l twoSmallest5
@@ -274,8 +327,88 @@ move~ _ * r move1
 move~ ~ % l *
 move~ * * l *
 
+prepUnmerge - _ r prepUnmerge1
+prepUnmerge * _ l *
 
+prepUnmerge1 _ 9 r prepUnmerge2
 
+prepUnmerge2 _ $ r prepUnmerge3
+
+prepUnmerge3 _ ( l prepUnmerge4
+
+prepUnmerge4 ) * l prepUnmerge5
+prepUnmerge4 * * l *
+
+prepUnmerge5 _ 8 l prepUnmerge8
+prepUnmerge5 * * l *
+
+prepUnmerge8 _ # l pullOrder1
+
+unmerge ( # r unmerge1
+unmerge $ * r reorder !
+unmerge * * r *
+
+; Look for ( or character to tell if we need to unmerge current segment
+unmerge1 ( { r unmerge2
+unmerge1 * * l unmerge5
+
+; Look for first )
+unmerge2 ) } l unmerge3
+unmerge2 } > r *
+unmerge2 * * r *
+
+; Look for first ( or {
+unmerge3 { @ r unmerge4
+unmerge3 ( < r unmerge2
+unmerge3 * * l *
+
+; Reset parentheses and set up move
+unmerge4 } % l move
+unmerge4 < ( r *
+unmerge4 > ) r *
+unmerge4 * * r * 
+
+unmerge5 # _ r *
+unmerge5 ) - r *
+unmerge5 _ * r unmerge
+unmerge5 * * r *
+
+reorder 9 b l reorder1
+reorder ( _ l *
+reorder * $ l *
+
+reorder1 # * l reorder2
+reorder1 * * l *
+
+reorder2 _ * r finish
+reorder2 * * l reorder3
+
+reorder3 _ * r find
+reorder3 * * l *
+
+finish * _ r finish1
+finish # _ r *
+finish _ * r *
+
+finish1 _ * l finish2
+finish1 * * r *
+
+finish2 $ _ r halt-accept
+finish2 - _ l *
+finish2 * * l *
+
+find a _ r fa
+find b _ r fb
+find c _ r fc
+
+fa a * l moveWord
+fa * * r *
+
+fb b * l moveWord
+fb * * r *
+
+fc c * l moveWord
+fc * * r *
 
 moveToFront @ _ l moveToFront1
 moveToFront * * l *

@@ -1,0 +1,5 @@
+move @ _ r move1
+move * * l *
+
+move2 $ * l control
+move2 * * r *
