@@ -4,33 +4,96 @@ copy * * l *
 copy2 $ * l control
 copy2 * * r *
 
-copy1 0 @ l w0
-copy1 1 @ l w1
+copy1 ( @ l w(
+copy1 ) @ l w)
+copy1 - @ l w-
 copy1 a @ l wa
 copy1 b @ l wb
 copy1 c @ l wc
 copy1 d @ l wd
+copy1 e @ l we
+copy1 f @ l wf
+copy1 g @ l wg
+copy1 h @ l wh
+copy1 i @ l wi
+copy1 j @ l wj
+copy1 k @ l wk
+copy1 l @ l wl
+copy1 m @ l wm
+copy1 n @ l wn
 copy1 o @ l wo
-copy1 ( @ l w(
-copy1 ) @ l w)
-copy1 - @ l w-
+copy1 p @ l wp
+copy1 q @ l wq
+copy1 r @ l wr
+copy1 s @ l ws
+copy1 t @ l wt
+copy1 u @ l wu
+copy1 v @ l wv
+copy1 w @ l ww
+copy1 x @ l wx
+copy1 y @ l wy
+copy1 z @ l wz
+copy1 A @ l wA
+copy1 B @ l wB
+copy1 C @ l wC
+copy1 D @ l wD
+copy1 E @ l wE
+copy1 F @ l wF
+copy1 G @ l wG
+copy1 H @ l wH
+copy1 I @ l wI
+copy1 J @ l wJ
+copy1 K @ l wK
+copy1 L @ l wL
+copy1 M @ l wM
+copy1 N @ l wN
+copy1 O @ l wO
+copy1 P @ l wP
+copy1 Q @ l wQ
+copy1 R @ l wR
+copy1 S @ l wS
+copy1 T @ l wT
+copy1 U @ l wU
+copy1 V @ l wV
+copy1 W @ l wW
+copy1 X @ l wX
+copy1 Y @ l wY
+copy1 Z @ l wZ
+copy1 0 @ l w0
+copy1 1 @ l w1
+copy1 2 @ l w2
+copy1 3 @ l w3
+copy1 4 @ l w4
+copy1 5 @ l w5
+copy1 6 @ l w6
+copy1 7 @ l w7
+copy1 8 @ l w8
+copy1 9 @ l w9
 copy1 % _ r copy2
 
-w0 _ 0 r w01
+w( _ ( r w(1
 
-w01 $ * r w02
-w01 * * r *
+w(1 $ * r w(2
+w(1 * * r *
 
-w02 _ 0 l copy 
-w02 * * r *
+w(2 _ ( l copy 
+w(2 * * r *
 
-w1 _ 1 r w11
+w) _ ) r w)1
 
-w11 $ * r w12
-w11 * * r *
+w)1 $ * r w)2
+w)1 * * r *
 
-w12 _ 1 l copy 
-w12 * * r *
+w)2 _ ) l copy 
+w)2 * * r *
+
+w- _ - r w-1
+
+w-1 $ * r w-2
+w-1 * * r *
+
+w-2 _ - l copy 
+w-2 * * r *
 
 wa _ a r wa1
 
@@ -64,6 +127,86 @@ wd1 * * r *
 wd2 _ d l copy 
 wd2 * * r *
 
+we _ e r we1
+
+we1 $ * r we2
+we1 * * r *
+
+we2 _ e l copy 
+we2 * * r *
+
+wf _ f r wf1
+
+wf1 $ * r wf2
+wf1 * * r *
+
+wf2 _ f l copy 
+wf2 * * r *
+
+wg _ g r wg1
+
+wg1 $ * r wg2
+wg1 * * r *
+
+wg2 _ g l copy 
+wg2 * * r *
+
+wh _ h r wh1
+
+wh1 $ * r wh2
+wh1 * * r *
+
+wh2 _ h l copy 
+wh2 * * r *
+
+wi _ i r wi1
+
+wi1 $ * r wi2
+wi1 * * r *
+
+wi2 _ i l copy 
+wi2 * * r *
+
+wj _ j r wj1
+
+wj1 $ * r wj2
+wj1 * * r *
+
+wj2 _ j l copy 
+wj2 * * r *
+
+wk _ k r wk1
+
+wk1 $ * r wk2
+wk1 * * r *
+
+wk2 _ k l copy 
+wk2 * * r *
+
+wl _ l r wl1
+
+wl1 $ * r wl2
+wl1 * * r *
+
+wl2 _ l l copy 
+wl2 * * r *
+
+wm _ m r wm1
+
+wm1 $ * r wm2
+wm1 * * r *
+
+wm2 _ m l copy 
+wm2 * * r *
+
+wn _ n r wn1
+
+wn1 $ * r wn2
+wn1 * * r *
+
+wn2 _ n l copy 
+wn2 * * r *
+
 wo _ o r wo1
 
 wo1 $ * r wo2
@@ -72,26 +215,378 @@ wo1 * * r *
 wo2 _ o l copy 
 wo2 * * r *
 
-w( _ ( r w(1
+wp _ p r wp1
 
-w(1 $ * r w(2
-w(1 * * r *
+wp1 $ * r wp2
+wp1 * * r *
 
-w(2 _ ( l copy 
-w(2 * * r *
+wp2 _ p l copy 
+wp2 * * r *
 
-w) _ ) r w)1
+wq _ q r wq1
 
-w)1 $ * r w)2
-w)1 * * r *
+wq1 $ * r wq2
+wq1 * * r *
 
-w)2 _ ) l copy 
-w)2 * * r *
+wq2 _ q l copy 
+wq2 * * r *
 
-w- _ - r w-1
+wr _ r r wr1
 
-w-1 $ * r w-2
-w-1 * * r *
+wr1 $ * r wr2
+wr1 * * r *
 
-w-2 _ - l copy 
-w-2 * * r *
+wr2 _ r l copy 
+wr2 * * r *
+
+ws _ s r ws1
+
+ws1 $ * r ws2
+ws1 * * r *
+
+ws2 _ s l copy 
+ws2 * * r *
+
+wt _ t r wt1
+
+wt1 $ * r wt2
+wt1 * * r *
+
+wt2 _ t l copy 
+wt2 * * r *
+
+wu _ u r wu1
+
+wu1 $ * r wu2
+wu1 * * r *
+
+wu2 _ u l copy 
+wu2 * * r *
+
+wv _ v r wv1
+
+wv1 $ * r wv2
+wv1 * * r *
+
+wv2 _ v l copy 
+wv2 * * r *
+
+ww _ w r ww1
+
+ww1 $ * r ww2
+ww1 * * r *
+
+ww2 _ w l copy 
+ww2 * * r *
+
+wx _ x r wx1
+
+wx1 $ * r wx2
+wx1 * * r *
+
+wx2 _ x l copy 
+wx2 * * r *
+
+wy _ y r wy1
+
+wy1 $ * r wy2
+wy1 * * r *
+
+wy2 _ y l copy 
+wy2 * * r *
+
+wz _ z r wz1
+
+wz1 $ * r wz2
+wz1 * * r *
+
+wz2 _ z l copy 
+wz2 * * r *
+
+wA _ A r wA1
+
+wA1 $ * r wA2
+wA1 * * r *
+
+wA2 _ A l copy 
+wA2 * * r *
+
+wB _ B r wB1
+
+wB1 $ * r wB2
+wB1 * * r *
+
+wB2 _ B l copy 
+wB2 * * r *
+
+wC _ C r wC1
+
+wC1 $ * r wC2
+wC1 * * r *
+
+wC2 _ C l copy 
+wC2 * * r *
+
+wD _ D r wD1
+
+wD1 $ * r wD2
+wD1 * * r *
+
+wD2 _ D l copy 
+wD2 * * r *
+
+wE _ E r wE1
+
+wE1 $ * r wE2
+wE1 * * r *
+
+wE2 _ E l copy 
+wE2 * * r *
+
+wF _ F r wF1
+
+wF1 $ * r wF2
+wF1 * * r *
+
+wF2 _ F l copy 
+wF2 * * r *
+
+wG _ G r wG1
+
+wG1 $ * r wG2
+wG1 * * r *
+
+wG2 _ G l copy 
+wG2 * * r *
+
+wH _ H r wH1
+
+wH1 $ * r wH2
+wH1 * * r *
+
+wH2 _ H l copy 
+wH2 * * r *
+
+wI _ I r wI1
+
+wI1 $ * r wI2
+wI1 * * r *
+
+wI2 _ I l copy 
+wI2 * * r *
+
+wJ _ J r wJ1
+
+wJ1 $ * r wJ2
+wJ1 * * r *
+
+wJ2 _ J l copy 
+wJ2 * * r *
+
+wK _ K r wK1
+
+wK1 $ * r wK2
+wK1 * * r *
+
+wK2 _ K l copy 
+wK2 * * r *
+
+wL _ L r wL1
+
+wL1 $ * r wL2
+wL1 * * r *
+
+wL2 _ L l copy 
+wL2 * * r *
+
+wM _ M r wM1
+
+wM1 $ * r wM2
+wM1 * * r *
+
+wM2 _ M l copy 
+wM2 * * r *
+
+wN _ N r wN1
+
+wN1 $ * r wN2
+wN1 * * r *
+
+wN2 _ N l copy 
+wN2 * * r *
+
+wO _ O r wO1
+
+wO1 $ * r wO2
+wO1 * * r *
+
+wO2 _ O l copy 
+wO2 * * r *
+
+wP _ P r wP1
+
+wP1 $ * r wP2
+wP1 * * r *
+
+wP2 _ P l copy 
+wP2 * * r *
+
+wQ _ Q r wQ1
+
+wQ1 $ * r wQ2
+wQ1 * * r *
+
+wQ2 _ Q l copy 
+wQ2 * * r *
+
+wR _ R r wR1
+
+wR1 $ * r wR2
+wR1 * * r *
+
+wR2 _ R l copy 
+wR2 * * r *
+
+wS _ S r wS1
+
+wS1 $ * r wS2
+wS1 * * r *
+
+wS2 _ S l copy 
+wS2 * * r *
+
+wT _ T r wT1
+
+wT1 $ * r wT2
+wT1 * * r *
+
+wT2 _ T l copy 
+wT2 * * r *
+
+wU _ U r wU1
+
+wU1 $ * r wU2
+wU1 * * r *
+
+wU2 _ U l copy 
+wU2 * * r *
+
+wV _ V r wV1
+
+wV1 $ * r wV2
+wV1 * * r *
+
+wV2 _ V l copy 
+wV2 * * r *
+
+wW _ W r wW1
+
+wW1 $ * r wW2
+wW1 * * r *
+
+wW2 _ W l copy 
+wW2 * * r *
+
+wX _ X r wX1
+
+wX1 $ * r wX2
+wX1 * * r *
+
+wX2 _ X l copy 
+wX2 * * r *
+
+wY _ Y r wY1
+
+wY1 $ * r wY2
+wY1 * * r *
+
+wY2 _ Y l copy 
+wY2 * * r *
+
+wZ _ Z r wZ1
+
+wZ1 $ * r wZ2
+wZ1 * * r *
+
+wZ2 _ Z l copy 
+wZ2 * * r *
+
+w0 _ 0 r w01
+
+w01 $ * r w02
+w01 * * r *
+
+w02 _ 0 l copy 
+w02 * * r *
+
+w1 _ 1 r w11
+
+w11 $ * r w12
+w11 * * r *
+
+w12 _ 1 l copy 
+w12 * * r *
+
+w2 _ 2 r w21
+
+w21 $ * r w22
+w21 * * r *
+
+w22 _ 2 l copy 
+w22 * * r *
+
+w3 _ 3 r w31
+
+w31 $ * r w32
+w31 * * r *
+
+w32 _ 3 l copy 
+w32 * * r *
+
+w4 _ 4 r w41
+
+w41 $ * r w42
+w41 * * r *
+
+w42 _ 4 l copy 
+w42 * * r *
+
+w5 _ 5 r w51
+
+w51 $ * r w52
+w51 * * r *
+
+w52 _ 5 l copy 
+w52 * * r *
+
+w6 _ 6 r w61
+
+w61 $ * r w62
+w61 * * r *
+
+w62 _ 6 l copy 
+w62 * * r *
+
+w7 _ 7 r w71
+
+w71 $ * r w72
+w71 * * r *
+
+w72 _ 7 l copy 
+w72 * * r *
+
+w8 _ 8 r w81
+
+w81 $ * r w82
+w81 * * r *
+
+w82 _ 8 l copy 
+w82 * * r *
+
+w9 _ 9 r w91
+
+w91 $ * r w92
+w91 * * r *
+
+w92 _ 9 l copy 
+w92 * * r *

@@ -1,27 +1,89 @@
-find 0 _ r f0
-find 1 _ r f1
+find ( _ r f(
+find ) _ r f)
+find - _ r f-
 find a _ r fa
 find b _ r fb
 find c _ r fc
 find d _ r fd
+find e _ r fe
+find f _ r ff
+find g _ r fg
+find h _ r fh
+find i _ r fi
+find j _ r fj
+find k _ r fk
+find l _ r fl
+find m _ r fm
+find n _ r fn
 find o _ r fo
-find ( _ r f(
-find ) _ r f)
-find - _ r f-
+find p _ r fp
+find q _ r fq
+find r _ r fr
+find s _ r fs
+find t _ r ft
+find u _ r fu
+find v _ r fv
+find w _ r fw
+find x _ r fx
+find y _ r fy
+find z _ r fz
+find A _ r fA
+find B _ r fB
+find C _ r fC
+find D _ r fD
+find E _ r fE
+find F _ r fF
+find G _ r fG
+find H _ r fH
+find I _ r fI
+find J _ r fJ
+find K _ r fK
+find L _ r fL
+find M _ r fM
+find N _ r fN
+find O _ r fO
+find P _ r fP
+find Q _ r fQ
+find R _ r fR
+find S _ r fS
+find T _ r fT
+find U _ r fU
+find V _ r fV
+find W _ r fW
+find X _ r fX
+find Y _ r fY
+find Z _ r fZ
+find 0 _ r f0
+find 1 _ r f1
+find 2 _ r f2
+find 3 _ r f3
+find 4 _ r f4
+find 5 _ r f5
+find 6 _ r f6
+find 7 _ r f7
+find 8 _ r f8
+find 9 _ r f9
 
-f0 0 * l moveWord
-f0 * * r f01
-f0 _ * r *
+f( ( * l moveWord
+f( * * r f(1
+f( _ * r *
 
-f01 _ * r f0
-f01 * * r *
+f(1 _ * r f(
+f(1 * * r *
 
-f1 1 * l moveWord
-f1 * * r f11
-f1 _ * r *
+f) ) * l moveWord
+f) * * r f)1
+f) _ * r *
 
-f11 _ * r f1
-f11 * * r *
+f)1 _ * r f)
+f)1 * * r *
+
+f- - * l moveWord
+f- * * r f-1
+f- _ * r *
+
+f-1 _ * r f-
+f-1 * * r *
 
 fa a * l moveWord
 fa * * r fa1
@@ -51,6 +113,76 @@ fd _ * r *
 fd1 _ * r fd
 fd1 * * r *
 
+fe e * l moveWord
+fe * * r fe1
+fe _ * r *
+
+fe1 _ * r fe
+fe1 * * r *
+
+ff f * l moveWord
+ff * * r ff1
+ff _ * r *
+
+ff1 _ * r ff
+ff1 * * r *
+
+fg g * l moveWord
+fg * * r fg1
+fg _ * r *
+
+fg1 _ * r fg
+fg1 * * r *
+
+fh h * l moveWord
+fh * * r fh1
+fh _ * r *
+
+fh1 _ * r fh
+fh1 * * r *
+
+fi i * l moveWord
+fi * * r fi1
+fi _ * r *
+
+fi1 _ * r fi
+fi1 * * r *
+
+fj j * l moveWord
+fj * * r fj1
+fj _ * r *
+
+fj1 _ * r fj
+fj1 * * r *
+
+fk k * l moveWord
+fk * * r fk1
+fk _ * r *
+
+fk1 _ * r fk
+fk1 * * r *
+
+fl l * l moveWord
+fl * * r fl1
+fl _ * r *
+
+fl1 _ * r fl
+fl1 * * r *
+
+fm m * l moveWord
+fm * * r fm1
+fm _ * r *
+
+fm1 _ * r fm
+fm1 * * r *
+
+fn n * l moveWord
+fn * * r fn1
+fn _ * r *
+
+fn1 _ * r fn
+fn1 * * r *
+
 fo o * l moveWord
 fo * * r fo1
 fo _ * r *
@@ -58,23 +190,331 @@ fo _ * r *
 fo1 _ * r fo
 fo1 * * r *
 
-f( ( * l moveWord
-f( * * r f(1
-f( _ * r *
+fp p * l moveWord
+fp * * r fp1
+fp _ * r *
 
-f(1 _ * r f(
-f(1 * * r *
+fp1 _ * r fp
+fp1 * * r *
 
-f) ) * l moveWord
-f) * * r f)1
-f) _ * r *
+fq q * l moveWord
+fq * * r fq1
+fq _ * r *
 
-f)1 _ * r f)
-f)1 * * r *
+fq1 _ * r fq
+fq1 * * r *
 
-f- - * l moveWord
-f- * * r f-1
-f- _ * r *
+fr r * l moveWord
+fr * * r fr1
+fr _ * r *
 
-f-1 _ * r f-
-f-1 * * r *
+fr1 _ * r fr
+fr1 * * r *
+
+fs s * l moveWord
+fs * * r fs1
+fs _ * r *
+
+fs1 _ * r fs
+fs1 * * r *
+
+ft t * l moveWord
+ft * * r ft1
+ft _ * r *
+
+ft1 _ * r ft
+ft1 * * r *
+
+fu u * l moveWord
+fu * * r fu1
+fu _ * r *
+
+fu1 _ * r fu
+fu1 * * r *
+
+fv v * l moveWord
+fv * * r fv1
+fv _ * r *
+
+fv1 _ * r fv
+fv1 * * r *
+
+fw w * l moveWord
+fw * * r fw1
+fw _ * r *
+
+fw1 _ * r fw
+fw1 * * r *
+
+fx x * l moveWord
+fx * * r fx1
+fx _ * r *
+
+fx1 _ * r fx
+fx1 * * r *
+
+fy y * l moveWord
+fy * * r fy1
+fy _ * r *
+
+fy1 _ * r fy
+fy1 * * r *
+
+fz z * l moveWord
+fz * * r fz1
+fz _ * r *
+
+fz1 _ * r fz
+fz1 * * r *
+
+fA A * l moveWord
+fA * * r fA1
+fA _ * r *
+
+fA1 _ * r fA
+fA1 * * r *
+
+fB B * l moveWord
+fB * * r fB1
+fB _ * r *
+
+fB1 _ * r fB
+fB1 * * r *
+
+fC C * l moveWord
+fC * * r fC1
+fC _ * r *
+
+fC1 _ * r fC
+fC1 * * r *
+
+fD D * l moveWord
+fD * * r fD1
+fD _ * r *
+
+fD1 _ * r fD
+fD1 * * r *
+
+fE E * l moveWord
+fE * * r fE1
+fE _ * r *
+
+fE1 _ * r fE
+fE1 * * r *
+
+fF F * l moveWord
+fF * * r fF1
+fF _ * r *
+
+fF1 _ * r fF
+fF1 * * r *
+
+fG G * l moveWord
+fG * * r fG1
+fG _ * r *
+
+fG1 _ * r fG
+fG1 * * r *
+
+fH H * l moveWord
+fH * * r fH1
+fH _ * r *
+
+fH1 _ * r fH
+fH1 * * r *
+
+fI I * l moveWord
+fI * * r fI1
+fI _ * r *
+
+fI1 _ * r fI
+fI1 * * r *
+
+fJ J * l moveWord
+fJ * * r fJ1
+fJ _ * r *
+
+fJ1 _ * r fJ
+fJ1 * * r *
+
+fK K * l moveWord
+fK * * r fK1
+fK _ * r *
+
+fK1 _ * r fK
+fK1 * * r *
+
+fL L * l moveWord
+fL * * r fL1
+fL _ * r *
+
+fL1 _ * r fL
+fL1 * * r *
+
+fM M * l moveWord
+fM * * r fM1
+fM _ * r *
+
+fM1 _ * r fM
+fM1 * * r *
+
+fN N * l moveWord
+fN * * r fN1
+fN _ * r *
+
+fN1 _ * r fN
+fN1 * * r *
+
+fO O * l moveWord
+fO * * r fO1
+fO _ * r *
+
+fO1 _ * r fO
+fO1 * * r *
+
+fP P * l moveWord
+fP * * r fP1
+fP _ * r *
+
+fP1 _ * r fP
+fP1 * * r *
+
+fQ Q * l moveWord
+fQ * * r fQ1
+fQ _ * r *
+
+fQ1 _ * r fQ
+fQ1 * * r *
+
+fR R * l moveWord
+fR * * r fR1
+fR _ * r *
+
+fR1 _ * r fR
+fR1 * * r *
+
+fS S * l moveWord
+fS * * r fS1
+fS _ * r *
+
+fS1 _ * r fS
+fS1 * * r *
+
+fT T * l moveWord
+fT * * r fT1
+fT _ * r *
+
+fT1 _ * r fT
+fT1 * * r *
+
+fU U * l moveWord
+fU * * r fU1
+fU _ * r *
+
+fU1 _ * r fU
+fU1 * * r *
+
+fV V * l moveWord
+fV * * r fV1
+fV _ * r *
+
+fV1 _ * r fV
+fV1 * * r *
+
+fW W * l moveWord
+fW * * r fW1
+fW _ * r *
+
+fW1 _ * r fW
+fW1 * * r *
+
+fX X * l moveWord
+fX * * r fX1
+fX _ * r *
+
+fX1 _ * r fX
+fX1 * * r *
+
+fY Y * l moveWord
+fY * * r fY1
+fY _ * r *
+
+fY1 _ * r fY
+fY1 * * r *
+
+fZ Z * l moveWord
+fZ * * r fZ1
+fZ _ * r *
+
+fZ1 _ * r fZ
+fZ1 * * r *
+
+f0 0 * l moveWord
+f0 * * r f01
+f0 _ * r *
+
+f01 _ * r f0
+f01 * * r *
+
+f1 1 * l moveWord
+f1 * * r f11
+f1 _ * r *
+
+f11 _ * r f1
+f11 * * r *
+
+f2 2 * l moveWord
+f2 * * r f21
+f2 _ * r *
+
+f21 _ * r f2
+f21 * * r *
+
+f3 3 * l moveWord
+f3 * * r f31
+f3 _ * r *
+
+f31 _ * r f3
+f31 * * r *
+
+f4 4 * l moveWord
+f4 * * r f41
+f4 _ * r *
+
+f41 _ * r f4
+f41 * * r *
+
+f5 5 * l moveWord
+f5 * * r f51
+f5 _ * r *
+
+f51 _ * r f5
+f51 * * r *
+
+f6 6 * l moveWord
+f6 * * r f61
+f6 _ * r *
+
+f61 _ * r f6
+f61 * * r *
+
+f7 7 * l moveWord
+f7 * * r f71
+f7 _ * r *
+
+f71 _ * r f7
+f71 * * r *
+
+f8 8 * l moveWord
+f8 * * r f81
+f8 _ * r *
+
+f81 _ * r f8
+f81 * * r *
+
+f9 9 * l moveWord
+f9 * * r f91
+f9 _ * r *
+
+f91 _ * r f9
+f91 * * r *

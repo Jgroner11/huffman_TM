@@ -1,7 +1,8 @@
 # Make sure to run this in the circuit directory
 import pyperclip
+import string
 
-restricted = ['%', '@', '#', '$']
+restricted = ['%', '-', '^', '@', '#', '$']
 
 def create_move_circuit(alphabet):
     with open('move_circuit_dynamic.txt', 'w') as f:
@@ -171,5 +172,6 @@ def create_huffman_encoding_dynamic(alphabet):
             
 
 # Make sure to run this in the circuit directory
-alphabet = ['0', '1', 'a', 'b', 'c', 'd', 'o', '(', ')', '-']
+alphabet = ['(', ')', '-'] + list(string.ascii_lowercase + string.ascii_uppercase + string.digits)
+print(alphabet)
 create_huffman_encoding_dynamic(alphabet)
