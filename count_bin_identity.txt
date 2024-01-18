@@ -21,7 +21,7 @@
 11 0 1 r *
 11 * * r *
 
-; Shift 2 -> Maintains head position but only works for a single charachter text
+; Shift 2 -> Maintains head position but only works for a single character text
 
 ;12 Finds last o
 12 _ * l 13
