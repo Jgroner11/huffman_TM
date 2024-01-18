@@ -8,458 +8,458 @@ writeLeft1 * * l *
 writeLeft3 $ _ l writeLeft
 writeLeft3 * * r *
 
-writeLeft2 ( * l wl(
-writeLeft2 ) * l wl)
-writeLeft2 - * l wl-
-writeLeft2 a * l wla
-writeLeft2 b * l wlb
-writeLeft2 c * l wlc
-writeLeft2 d * l wld
-writeLeft2 e * l wle
-writeLeft2 f * l wlf
-writeLeft2 g * l wlg
-writeLeft2 h * l wlh
-writeLeft2 i * l wli
-writeLeft2 j * l wlj
-writeLeft2 k * l wlk
-writeLeft2 l * l wll
-writeLeft2 m * l wlm
-writeLeft2 n * l wln
-writeLeft2 o * l wlo
-writeLeft2 p * l wlp
-writeLeft2 q * l wlq
-writeLeft2 r * l wlr
-writeLeft2 s * l wls
-writeLeft2 t * l wlt
-writeLeft2 u * l wlu
-writeLeft2 v * l wlv
-writeLeft2 w * l wlw
-writeLeft2 x * l wlx
-writeLeft2 y * l wly
-writeLeft2 z * l wlz
-writeLeft2 A * l wlA
-writeLeft2 B * l wlB
-writeLeft2 C * l wlC
-writeLeft2 D * l wlD
-writeLeft2 E * l wlE
-writeLeft2 F * l wlF
-writeLeft2 G * l wlG
-writeLeft2 H * l wlH
-writeLeft2 I * l wlI
-writeLeft2 J * l wlJ
-writeLeft2 K * l wlK
-writeLeft2 L * l wlL
-writeLeft2 M * l wlM
-writeLeft2 N * l wlN
-writeLeft2 O * l wlO
-writeLeft2 P * l wlP
-writeLeft2 Q * l wlQ
-writeLeft2 R * l wlR
-writeLeft2 S * l wlS
-writeLeft2 T * l wlT
-writeLeft2 U * l wlU
-writeLeft2 V * l wlV
-writeLeft2 W * l wlW
-writeLeft2 X * l wlX
-writeLeft2 Y * l wlY
-writeLeft2 Z * l wlZ
-writeLeft2 0 * l wl0
-writeLeft2 1 * l wl1
-writeLeft2 2 * l wl2
-writeLeft2 3 * l wl3
-writeLeft2 4 * l wl4
-writeLeft2 5 * l wl5
-writeLeft2 6 * l wl6
-writeLeft2 7 * l wl7
-writeLeft2 8 * l wl8
-writeLeft2 9 * l wl9
-
-wl( # * l wl(1
-wl( * * l *
-
-wl(1 _ ( r writeLeft3 
-wl(1 * * l *
-
-wl) # * l wl)1
-wl) * * l *
-
-wl)1 _ ) r writeLeft3 
-wl)1 * * l *
-
-wl- # * l wl-1
-wl- * * l *
-
-wl-1 _ - r writeLeft3 
-wl-1 * * l *
-
-wla # * l wla1
-wla * * l *
-
-wla1 _ a r writeLeft3 
-wla1 * * l *
-
-wlb # * l wlb1
-wlb * * l *
-
-wlb1 _ b r writeLeft3 
-wlb1 * * l *
-
-wlc # * l wlc1
-wlc * * l *
-
-wlc1 _ c r writeLeft3 
-wlc1 * * l *
+writeLeft2 ( * l wl_(
+writeLeft2 ) * l wl_)
+writeLeft2 - * l wl_-
+writeLeft2 a * l wl_a
+writeLeft2 b * l wl_b
+writeLeft2 c * l wl_c
+writeLeft2 d * l wl_d
+writeLeft2 e * l wl_e
+writeLeft2 f * l wl_f
+writeLeft2 g * l wl_g
+writeLeft2 h * l wl_h
+writeLeft2 i * l wl_i
+writeLeft2 j * l wl_j
+writeLeft2 k * l wl_k
+writeLeft2 l * l wl_l
+writeLeft2 m * l wl_m
+writeLeft2 n * l wl_n
+writeLeft2 o * l wl_o
+writeLeft2 p * l wl_p
+writeLeft2 q * l wl_q
+writeLeft2 r * l wl_r
+writeLeft2 s * l wl_s
+writeLeft2 t * l wl_t
+writeLeft2 u * l wl_u
+writeLeft2 v * l wl_v
+writeLeft2 w * l wl_w
+writeLeft2 x * l wl_x
+writeLeft2 y * l wl_y
+writeLeft2 z * l wl_z
+writeLeft2 A * l wl_A
+writeLeft2 B * l wl_B
+writeLeft2 C * l wl_C
+writeLeft2 D * l wl_D
+writeLeft2 E * l wl_E
+writeLeft2 F * l wl_F
+writeLeft2 G * l wl_G
+writeLeft2 H * l wl_H
+writeLeft2 I * l wl_I
+writeLeft2 J * l wl_J
+writeLeft2 K * l wl_K
+writeLeft2 L * l wl_L
+writeLeft2 M * l wl_M
+writeLeft2 N * l wl_N
+writeLeft2 O * l wl_O
+writeLeft2 P * l wl_P
+writeLeft2 Q * l wl_Q
+writeLeft2 R * l wl_R
+writeLeft2 S * l wl_S
+writeLeft2 T * l wl_T
+writeLeft2 U * l wl_U
+writeLeft2 V * l wl_V
+writeLeft2 W * l wl_W
+writeLeft2 X * l wl_X
+writeLeft2 Y * l wl_Y
+writeLeft2 Z * l wl_Z
+writeLeft2 0 * l wl_0
+writeLeft2 1 * l wl_1
+writeLeft2 2 * l wl_2
+writeLeft2 3 * l wl_3
+writeLeft2 4 * l wl_4
+writeLeft2 5 * l wl_5
+writeLeft2 6 * l wl_6
+writeLeft2 7 * l wl_7
+writeLeft2 8 * l wl_8
+writeLeft2 9 * l wl_9
+
+wl_( # * l wl_(1
+wl_( * * l *
+
+wl_(1 _ ( r writeLeft3 
+wl_(1 * * l *
+
+wl_) # * l wl_)1
+wl_) * * l *
+
+wl_)1 _ ) r writeLeft3 
+wl_)1 * * l *
+
+wl_- # * l wl_-1
+wl_- * * l *
+
+wl_-1 _ - r writeLeft3 
+wl_-1 * * l *
+
+wl_a # * l wl_a1
+wl_a * * l *
+
+wl_a1 _ a r writeLeft3 
+wl_a1 * * l *
+
+wl_b # * l wl_b1
+wl_b * * l *
+
+wl_b1 _ b r writeLeft3 
+wl_b1 * * l *
+
+wl_c # * l wl_c1
+wl_c * * l *
+
+wl_c1 _ c r writeLeft3 
+wl_c1 * * l *
 
-wld # * l wld1
-wld * * l *
+wl_d # * l wl_d1
+wl_d * * l *
 
-wld1 _ d r writeLeft3 
-wld1 * * l *
+wl_d1 _ d r writeLeft3 
+wl_d1 * * l *
 
-wle # * l wle1
-wle * * l *
+wl_e # * l wl_e1
+wl_e * * l *
 
-wle1 _ e r writeLeft3 
-wle1 * * l *
+wl_e1 _ e r writeLeft3 
+wl_e1 * * l *
 
-wlf # * l wlf1
-wlf * * l *
+wl_f # * l wl_f1
+wl_f * * l *
 
-wlf1 _ f r writeLeft3 
-wlf1 * * l *
+wl_f1 _ f r writeLeft3 
+wl_f1 * * l *
 
-wlg # * l wlg1
-wlg * * l *
+wl_g # * l wl_g1
+wl_g * * l *
 
-wlg1 _ g r writeLeft3 
-wlg1 * * l *
+wl_g1 _ g r writeLeft3 
+wl_g1 * * l *
 
-wlh # * l wlh1
-wlh * * l *
+wl_h # * l wl_h1
+wl_h * * l *
 
-wlh1 _ h r writeLeft3 
-wlh1 * * l *
+wl_h1 _ h r writeLeft3 
+wl_h1 * * l *
 
-wli # * l wli1
-wli * * l *
+wl_i # * l wl_i1
+wl_i * * l *
 
-wli1 _ i r writeLeft3 
-wli1 * * l *
+wl_i1 _ i r writeLeft3 
+wl_i1 * * l *
 
-wlj # * l wlj1
-wlj * * l *
+wl_j # * l wl_j1
+wl_j * * l *
 
-wlj1 _ j r writeLeft3 
-wlj1 * * l *
+wl_j1 _ j r writeLeft3 
+wl_j1 * * l *
 
-wlk # * l wlk1
-wlk * * l *
+wl_k # * l wl_k1
+wl_k * * l *
 
-wlk1 _ k r writeLeft3 
-wlk1 * * l *
+wl_k1 _ k r writeLeft3 
+wl_k1 * * l *
 
-wll # * l wll1
-wll * * l *
+wl_l # * l wl_l1
+wl_l * * l *
 
-wll1 _ l r writeLeft3 
-wll1 * * l *
+wl_l1 _ l r writeLeft3 
+wl_l1 * * l *
 
-wlm # * l wlm1
-wlm * * l *
+wl_m # * l wl_m1
+wl_m * * l *
 
-wlm1 _ m r writeLeft3 
-wlm1 * * l *
+wl_m1 _ m r writeLeft3 
+wl_m1 * * l *
 
-wln # * l wln1
-wln * * l *
+wl_n # * l wl_n1
+wl_n * * l *
 
-wln1 _ n r writeLeft3 
-wln1 * * l *
+wl_n1 _ n r writeLeft3 
+wl_n1 * * l *
 
-wlo # * l wlo1
-wlo * * l *
+wl_o # * l wl_o1
+wl_o * * l *
 
-wlo1 _ o r writeLeft3 
-wlo1 * * l *
+wl_o1 _ o r writeLeft3 
+wl_o1 * * l *
 
-wlp # * l wlp1
-wlp * * l *
+wl_p # * l wl_p1
+wl_p * * l *
 
-wlp1 _ p r writeLeft3 
-wlp1 * * l *
+wl_p1 _ p r writeLeft3 
+wl_p1 * * l *
 
-wlq # * l wlq1
-wlq * * l *
+wl_q # * l wl_q1
+wl_q * * l *
 
-wlq1 _ q r writeLeft3 
-wlq1 * * l *
+wl_q1 _ q r writeLeft3 
+wl_q1 * * l *
 
-wlr # * l wlr1
-wlr * * l *
+wl_r # * l wl_r1
+wl_r * * l *
 
-wlr1 _ r r writeLeft3 
-wlr1 * * l *
+wl_r1 _ r r writeLeft3 
+wl_r1 * * l *
 
-wls # * l wls1
-wls * * l *
+wl_s # * l wl_s1
+wl_s * * l *
 
-wls1 _ s r writeLeft3 
-wls1 * * l *
+wl_s1 _ s r writeLeft3 
+wl_s1 * * l *
 
-wlt # * l wlt1
-wlt * * l *
+wl_t # * l wl_t1
+wl_t * * l *
 
-wlt1 _ t r writeLeft3 
-wlt1 * * l *
+wl_t1 _ t r writeLeft3 
+wl_t1 * * l *
 
-wlu # * l wlu1
-wlu * * l *
+wl_u # * l wl_u1
+wl_u * * l *
 
-wlu1 _ u r writeLeft3 
-wlu1 * * l *
+wl_u1 _ u r writeLeft3 
+wl_u1 * * l *
 
-wlv # * l wlv1
-wlv * * l *
+wl_v # * l wl_v1
+wl_v * * l *
 
-wlv1 _ v r writeLeft3 
-wlv1 * * l *
+wl_v1 _ v r writeLeft3 
+wl_v1 * * l *
 
-wlw # * l wlw1
-wlw * * l *
+wl_w # * l wl_w1
+wl_w * * l *
 
-wlw1 _ w r writeLeft3 
-wlw1 * * l *
+wl_w1 _ w r writeLeft3 
+wl_w1 * * l *
 
-wlx # * l wlx1
-wlx * * l *
+wl_x # * l wl_x1
+wl_x * * l *
 
-wlx1 _ x r writeLeft3 
-wlx1 * * l *
+wl_x1 _ x r writeLeft3 
+wl_x1 * * l *
 
-wly # * l wly1
-wly * * l *
+wl_y # * l wl_y1
+wl_y * * l *
 
-wly1 _ y r writeLeft3 
-wly1 * * l *
+wl_y1 _ y r writeLeft3 
+wl_y1 * * l *
 
-wlz # * l wlz1
-wlz * * l *
+wl_z # * l wl_z1
+wl_z * * l *
 
-wlz1 _ z r writeLeft3 
-wlz1 * * l *
+wl_z1 _ z r writeLeft3 
+wl_z1 * * l *
 
-wlA # * l wlA1
-wlA * * l *
+wl_A # * l wl_A1
+wl_A * * l *
 
-wlA1 _ A r writeLeft3 
-wlA1 * * l *
+wl_A1 _ A r writeLeft3 
+wl_A1 * * l *
 
-wlB # * l wlB1
-wlB * * l *
+wl_B # * l wl_B1
+wl_B * * l *
 
-wlB1 _ B r writeLeft3 
-wlB1 * * l *
+wl_B1 _ B r writeLeft3 
+wl_B1 * * l *
 
-wlC # * l wlC1
-wlC * * l *
+wl_C # * l wl_C1
+wl_C * * l *
 
-wlC1 _ C r writeLeft3 
-wlC1 * * l *
+wl_C1 _ C r writeLeft3 
+wl_C1 * * l *
 
-wlD # * l wlD1
-wlD * * l *
+wl_D # * l wl_D1
+wl_D * * l *
 
-wlD1 _ D r writeLeft3 
-wlD1 * * l *
+wl_D1 _ D r writeLeft3 
+wl_D1 * * l *
 
-wlE # * l wlE1
-wlE * * l *
+wl_E # * l wl_E1
+wl_E * * l *
 
-wlE1 _ E r writeLeft3 
-wlE1 * * l *
+wl_E1 _ E r writeLeft3 
+wl_E1 * * l *
 
-wlF # * l wlF1
-wlF * * l *
+wl_F # * l wl_F1
+wl_F * * l *
 
-wlF1 _ F r writeLeft3 
-wlF1 * * l *
+wl_F1 _ F r writeLeft3 
+wl_F1 * * l *
 
-wlG # * l wlG1
-wlG * * l *
+wl_G # * l wl_G1
+wl_G * * l *
 
-wlG1 _ G r writeLeft3 
-wlG1 * * l *
+wl_G1 _ G r writeLeft3 
+wl_G1 * * l *
 
-wlH # * l wlH1
-wlH * * l *
+wl_H # * l wl_H1
+wl_H * * l *
 
-wlH1 _ H r writeLeft3 
-wlH1 * * l *
+wl_H1 _ H r writeLeft3 
+wl_H1 * * l *
 
-wlI # * l wlI1
-wlI * * l *
+wl_I # * l wl_I1
+wl_I * * l *
 
-wlI1 _ I r writeLeft3 
-wlI1 * * l *
+wl_I1 _ I r writeLeft3 
+wl_I1 * * l *
 
-wlJ # * l wlJ1
-wlJ * * l *
+wl_J # * l wl_J1
+wl_J * * l *
 
-wlJ1 _ J r writeLeft3 
-wlJ1 * * l *
+wl_J1 _ J r writeLeft3 
+wl_J1 * * l *
 
-wlK # * l wlK1
-wlK * * l *
+wl_K # * l wl_K1
+wl_K * * l *
 
-wlK1 _ K r writeLeft3 
-wlK1 * * l *
+wl_K1 _ K r writeLeft3 
+wl_K1 * * l *
 
-wlL # * l wlL1
-wlL * * l *
+wl_L # * l wl_L1
+wl_L * * l *
 
-wlL1 _ L r writeLeft3 
-wlL1 * * l *
+wl_L1 _ L r writeLeft3 
+wl_L1 * * l *
 
-wlM # * l wlM1
-wlM * * l *
+wl_M # * l wl_M1
+wl_M * * l *
 
-wlM1 _ M r writeLeft3 
-wlM1 * * l *
+wl_M1 _ M r writeLeft3 
+wl_M1 * * l *
 
-wlN # * l wlN1
-wlN * * l *
+wl_N # * l wl_N1
+wl_N * * l *
 
-wlN1 _ N r writeLeft3 
-wlN1 * * l *
+wl_N1 _ N r writeLeft3 
+wl_N1 * * l *
 
-wlO # * l wlO1
-wlO * * l *
+wl_O # * l wl_O1
+wl_O * * l *
 
-wlO1 _ O r writeLeft3 
-wlO1 * * l *
+wl_O1 _ O r writeLeft3 
+wl_O1 * * l *
 
-wlP # * l wlP1
-wlP * * l *
+wl_P # * l wl_P1
+wl_P * * l *
 
-wlP1 _ P r writeLeft3 
-wlP1 * * l *
+wl_P1 _ P r writeLeft3 
+wl_P1 * * l *
 
-wlQ # * l wlQ1
-wlQ * * l *
+wl_Q # * l wl_Q1
+wl_Q * * l *
 
-wlQ1 _ Q r writeLeft3 
-wlQ1 * * l *
+wl_Q1 _ Q r writeLeft3 
+wl_Q1 * * l *
 
-wlR # * l wlR1
-wlR * * l *
+wl_R # * l wl_R1
+wl_R * * l *
 
-wlR1 _ R r writeLeft3 
-wlR1 * * l *
+wl_R1 _ R r writeLeft3 
+wl_R1 * * l *
 
-wlS # * l wlS1
-wlS * * l *
+wl_S # * l wl_S1
+wl_S * * l *
 
-wlS1 _ S r writeLeft3 
-wlS1 * * l *
+wl_S1 _ S r writeLeft3 
+wl_S1 * * l *
 
-wlT # * l wlT1
-wlT * * l *
+wl_T # * l wl_T1
+wl_T * * l *
 
-wlT1 _ T r writeLeft3 
-wlT1 * * l *
+wl_T1 _ T r writeLeft3 
+wl_T1 * * l *
 
-wlU # * l wlU1
-wlU * * l *
+wl_U # * l wl_U1
+wl_U * * l *
 
-wlU1 _ U r writeLeft3 
-wlU1 * * l *
+wl_U1 _ U r writeLeft3 
+wl_U1 * * l *
 
-wlV # * l wlV1
-wlV * * l *
+wl_V # * l wl_V1
+wl_V * * l *
 
-wlV1 _ V r writeLeft3 
-wlV1 * * l *
+wl_V1 _ V r writeLeft3 
+wl_V1 * * l *
 
-wlW # * l wlW1
-wlW * * l *
+wl_W # * l wl_W1
+wl_W * * l *
 
-wlW1 _ W r writeLeft3 
-wlW1 * * l *
+wl_W1 _ W r writeLeft3 
+wl_W1 * * l *
 
-wlX # * l wlX1
-wlX * * l *
+wl_X # * l wl_X1
+wl_X * * l *
 
-wlX1 _ X r writeLeft3 
-wlX1 * * l *
+wl_X1 _ X r writeLeft3 
+wl_X1 * * l *
 
-wlY # * l wlY1
-wlY * * l *
+wl_Y # * l wl_Y1
+wl_Y * * l *
 
-wlY1 _ Y r writeLeft3 
-wlY1 * * l *
+wl_Y1 _ Y r writeLeft3 
+wl_Y1 * * l *
 
-wlZ # * l wlZ1
-wlZ * * l *
+wl_Z # * l wl_Z1
+wl_Z * * l *
 
-wlZ1 _ Z r writeLeft3 
-wlZ1 * * l *
+wl_Z1 _ Z r writeLeft3 
+wl_Z1 * * l *
 
-wl0 # * l wl01
-wl0 * * l *
+wl_0 # * l wl_01
+wl_0 * * l *
 
-wl01 _ 0 r writeLeft3 
-wl01 * * l *
+wl_01 _ 0 r writeLeft3 
+wl_01 * * l *
 
-wl1 # * l wl11
-wl1 * * l *
+wl_1 # * l wl_11
+wl_1 * * l *
 
-wl11 _ 1 r writeLeft3 
-wl11 * * l *
+wl_11 _ 1 r writeLeft3 
+wl_11 * * l *
 
-wl2 # * l wl21
-wl2 * * l *
+wl_2 # * l wl_21
+wl_2 * * l *
 
-wl21 _ 2 r writeLeft3 
-wl21 * * l *
+wl_21 _ 2 r writeLeft3 
+wl_21 * * l *
 
-wl3 # * l wl31
-wl3 * * l *
+wl_3 # * l wl_31
+wl_3 * * l *
 
-wl31 _ 3 r writeLeft3 
-wl31 * * l *
+wl_31 _ 3 r writeLeft3 
+wl_31 * * l *
 
-wl4 # * l wl41
-wl4 * * l *
+wl_4 # * l wl_41
+wl_4 * * l *
 
-wl41 _ 4 r writeLeft3 
-wl41 * * l *
+wl_41 _ 4 r writeLeft3 
+wl_41 * * l *
 
-wl5 # * l wl51
-wl5 * * l *
+wl_5 # * l wl_51
+wl_5 * * l *
 
-wl51 _ 5 r writeLeft3 
-wl51 * * l *
+wl_51 _ 5 r writeLeft3 
+wl_51 * * l *
 
-wl6 # * l wl61
-wl6 * * l *
+wl_6 # * l wl_61
+wl_6 * * l *
 
-wl61 _ 6 r writeLeft3 
-wl61 * * l *
+wl_61 _ 6 r writeLeft3 
+wl_61 * * l *
 
-wl7 # * l wl71
-wl7 * * l *
+wl_7 # * l wl_71
+wl_7 * * l *
 
-wl71 _ 7 r writeLeft3 
-wl71 * * l *
+wl_71 _ 7 r writeLeft3 
+wl_71 * * l *
 
-wl8 # * l wl81
-wl8 * * l *
+wl_8 # * l wl_81
+wl_8 * * l *
 
-wl81 _ 8 r writeLeft3 
-wl81 * * l *
+wl_81 _ 8 r writeLeft3 
+wl_81 * * l *
 
-wl9 # * l wl91
-wl9 * * l *
+wl_9 # * l wl_91
+wl_9 * * l *
 
-wl91 _ 9 r writeLeft3 
-wl91 * * l *
+wl_91 _ 9 r writeLeft3 
+wl_91 * * l *

@@ -1,456 +1,456 @@
-move1 ( @ r m(
-move1 ) @ r m)
-move1 - @ r m-
-move1 a @ r ma
-move1 b @ r mb
-move1 c @ r mc
-move1 d @ r md
-move1 e @ r me
-move1 f @ r mf
-move1 g @ r mg
-move1 h @ r mh
-move1 i @ r mi
-move1 j @ r mj
-move1 k @ r mk
-move1 l @ r ml
-move1 m @ r mm
-move1 n @ r mn
-move1 o @ r mo
-move1 p @ r mp
-move1 q @ r mq
-move1 r @ r mr
-move1 s @ r ms
-move1 t @ r mt
-move1 u @ r mu
-move1 v @ r mv
-move1 w @ r mw
-move1 x @ r mx
-move1 y @ r my
-move1 z @ r mz
-move1 A @ r mA
-move1 B @ r mB
-move1 C @ r mC
-move1 D @ r mD
-move1 E @ r mE
-move1 F @ r mF
-move1 G @ r mG
-move1 H @ r mH
-move1 I @ r mI
-move1 J @ r mJ
-move1 K @ r mK
-move1 L @ r mL
-move1 M @ r mM
-move1 N @ r mN
-move1 O @ r mO
-move1 P @ r mP
-move1 Q @ r mQ
-move1 R @ r mR
-move1 S @ r mS
-move1 T @ r mT
-move1 U @ r mU
-move1 V @ r mV
-move1 W @ r mW
-move1 X @ r mX
-move1 Y @ r mY
-move1 Z @ r mZ
-move1 0 @ r m0
-move1 1 @ r m1
-move1 2 @ r m2
-move1 3 @ r m3
-move1 4 @ r m4
-move1 5 @ r m5
-move1 6 @ r m6
-move1 7 @ r m7
-move1 8 @ r m8
-move1 9 @ r m9
+move1 ( @ r m_(
+move1 ) @ r m_)
+move1 - @ r m_-
+move1 a @ r m_a
+move1 b @ r m_b
+move1 c @ r m_c
+move1 d @ r m_d
+move1 e @ r m_e
+move1 f @ r m_f
+move1 g @ r m_g
+move1 h @ r m_h
+move1 i @ r m_i
+move1 j @ r m_j
+move1 k @ r m_k
+move1 l @ r m_l
+move1 m @ r m_m
+move1 n @ r m_n
+move1 o @ r m_o
+move1 p @ r m_p
+move1 q @ r m_q
+move1 r @ r m_r
+move1 s @ r m_s
+move1 t @ r m_t
+move1 u @ r m_u
+move1 v @ r m_v
+move1 w @ r m_w
+move1 x @ r m_x
+move1 y @ r m_y
+move1 z @ r m_z
+move1 A @ r m_A
+move1 B @ r m_B
+move1 C @ r m_C
+move1 D @ r m_D
+move1 E @ r m_E
+move1 F @ r m_F
+move1 G @ r m_G
+move1 H @ r m_H
+move1 I @ r m_I
+move1 J @ r m_J
+move1 K @ r m_K
+move1 L @ r m_L
+move1 M @ r m_M
+move1 N @ r m_N
+move1 O @ r m_O
+move1 P @ r m_P
+move1 Q @ r m_Q
+move1 R @ r m_R
+move1 S @ r m_S
+move1 T @ r m_T
+move1 U @ r m_U
+move1 V @ r m_V
+move1 W @ r m_W
+move1 X @ r m_X
+move1 Y @ r m_Y
+move1 Z @ r m_Z
+move1 0 @ r m_0
+move1 1 @ r m_1
+move1 2 @ r m_2
+move1 3 @ r m_3
+move1 4 @ r m_4
+move1 5 @ r m_5
+move1 6 @ r m_6
+move1 7 @ r m_7
+move1 8 @ r m_8
+move1 9 @ r m_9
 move1 % _ r move2
 
-m( $ * r m(1
-m( * * r *
+m_( $ * r m_(1
+m_( * * r *
 
-m(1 _ ( l move 
-m(1 * * r *
+m_(1 _ ( l move 
+m_(1 * * r *
 
-m) $ * r m)1
-m) * * r *
+m_) $ * r m_)1
+m_) * * r *
 
-m)1 _ ) l move 
-m)1 * * r *
+m_)1 _ ) l move 
+m_)1 * * r *
 
-m- $ * r m-1
-m- * * r *
+m_- $ * r m_-1
+m_- * * r *
 
-m-1 _ - l move 
-m-1 * * r *
+m_-1 _ - l move 
+m_-1 * * r *
 
-ma $ * r ma1
-ma * * r *
+m_a $ * r m_a1
+m_a * * r *
 
-ma1 _ a l move 
-ma1 * * r *
+m_a1 _ a l move 
+m_a1 * * r *
 
-mb $ * r mb1
-mb * * r *
+m_b $ * r m_b1
+m_b * * r *
 
-mb1 _ b l move 
-mb1 * * r *
+m_b1 _ b l move 
+m_b1 * * r *
 
-mc $ * r mc1
-mc * * r *
+m_c $ * r m_c1
+m_c * * r *
 
-mc1 _ c l move 
-mc1 * * r *
+m_c1 _ c l move 
+m_c1 * * r *
 
-md $ * r md1
-md * * r *
+m_d $ * r m_d1
+m_d * * r *
 
-md1 _ d l move 
-md1 * * r *
+m_d1 _ d l move 
+m_d1 * * r *
 
-me $ * r me1
-me * * r *
+m_e $ * r m_e1
+m_e * * r *
 
-me1 _ e l move 
-me1 * * r *
+m_e1 _ e l move 
+m_e1 * * r *
 
-mf $ * r mf1
-mf * * r *
+m_f $ * r m_f1
+m_f * * r *
 
-mf1 _ f l move 
-mf1 * * r *
+m_f1 _ f l move 
+m_f1 * * r *
 
-mg $ * r mg1
-mg * * r *
+m_g $ * r m_g1
+m_g * * r *
 
-mg1 _ g l move 
-mg1 * * r *
+m_g1 _ g l move 
+m_g1 * * r *
 
-mh $ * r mh1
-mh * * r *
+m_h $ * r m_h1
+m_h * * r *
 
-mh1 _ h l move 
-mh1 * * r *
+m_h1 _ h l move 
+m_h1 * * r *
 
-mi $ * r mi1
-mi * * r *
+m_i $ * r m_i1
+m_i * * r *
 
-mi1 _ i l move 
-mi1 * * r *
+m_i1 _ i l move 
+m_i1 * * r *
 
-mj $ * r mj1
-mj * * r *
+m_j $ * r m_j1
+m_j * * r *
 
-mj1 _ j l move 
-mj1 * * r *
+m_j1 _ j l move 
+m_j1 * * r *
 
-mk $ * r mk1
-mk * * r *
+m_k $ * r m_k1
+m_k * * r *
 
-mk1 _ k l move 
-mk1 * * r *
+m_k1 _ k l move 
+m_k1 * * r *
 
-ml $ * r ml1
-ml * * r *
+m_l $ * r m_l1
+m_l * * r *
 
-ml1 _ l l move 
-ml1 * * r *
+m_l1 _ l l move 
+m_l1 * * r *
 
-mm $ * r mm1
-mm * * r *
+m_m $ * r m_m1
+m_m * * r *
 
-mm1 _ m l move 
-mm1 * * r *
+m_m1 _ m l move 
+m_m1 * * r *
 
-mn $ * r mn1
-mn * * r *
+m_n $ * r m_n1
+m_n * * r *
 
-mn1 _ n l move 
-mn1 * * r *
+m_n1 _ n l move 
+m_n1 * * r *
 
-mo $ * r mo1
-mo * * r *
+m_o $ * r m_o1
+m_o * * r *
 
-mo1 _ o l move 
-mo1 * * r *
+m_o1 _ o l move 
+m_o1 * * r *
 
-mp $ * r mp1
-mp * * r *
+m_p $ * r m_p1
+m_p * * r *
 
-mp1 _ p l move 
-mp1 * * r *
+m_p1 _ p l move 
+m_p1 * * r *
 
-mq $ * r mq1
-mq * * r *
+m_q $ * r m_q1
+m_q * * r *
 
-mq1 _ q l move 
-mq1 * * r *
+m_q1 _ q l move 
+m_q1 * * r *
 
-mr $ * r mr1
-mr * * r *
+m_r $ * r m_r1
+m_r * * r *
 
-mr1 _ r l move 
-mr1 * * r *
+m_r1 _ r l move 
+m_r1 * * r *
 
-ms $ * r ms1
-ms * * r *
+m_s $ * r m_s1
+m_s * * r *
 
-ms1 _ s l move 
-ms1 * * r *
+m_s1 _ s l move 
+m_s1 * * r *
 
-mt $ * r mt1
-mt * * r *
+m_t $ * r m_t1
+m_t * * r *
 
-mt1 _ t l move 
-mt1 * * r *
+m_t1 _ t l move 
+m_t1 * * r *
 
-mu $ * r mu1
-mu * * r *
+m_u $ * r m_u1
+m_u * * r *
 
-mu1 _ u l move 
-mu1 * * r *
+m_u1 _ u l move 
+m_u1 * * r *
 
-mv $ * r mv1
-mv * * r *
+m_v $ * r m_v1
+m_v * * r *
 
-mv1 _ v l move 
-mv1 * * r *
+m_v1 _ v l move 
+m_v1 * * r *
 
-mw $ * r mw1
-mw * * r *
+m_w $ * r m_w1
+m_w * * r *
 
-mw1 _ w l move 
-mw1 * * r *
+m_w1 _ w l move 
+m_w1 * * r *
 
-mx $ * r mx1
-mx * * r *
+m_x $ * r m_x1
+m_x * * r *
 
-mx1 _ x l move 
-mx1 * * r *
+m_x1 _ x l move 
+m_x1 * * r *
 
-my $ * r my1
-my * * r *
+m_y $ * r m_y1
+m_y * * r *
 
-my1 _ y l move 
-my1 * * r *
+m_y1 _ y l move 
+m_y1 * * r *
 
-mz $ * r mz1
-mz * * r *
+m_z $ * r m_z1
+m_z * * r *
 
-mz1 _ z l move 
-mz1 * * r *
+m_z1 _ z l move 
+m_z1 * * r *
 
-mA $ * r mA1
-mA * * r *
+m_A $ * r m_A1
+m_A * * r *
 
-mA1 _ A l move 
-mA1 * * r *
+m_A1 _ A l move 
+m_A1 * * r *
 
-mB $ * r mB1
-mB * * r *
+m_B $ * r m_B1
+m_B * * r *
 
-mB1 _ B l move 
-mB1 * * r *
+m_B1 _ B l move 
+m_B1 * * r *
 
-mC $ * r mC1
-mC * * r *
+m_C $ * r m_C1
+m_C * * r *
 
-mC1 _ C l move 
-mC1 * * r *
+m_C1 _ C l move 
+m_C1 * * r *
 
-mD $ * r mD1
-mD * * r *
+m_D $ * r m_D1
+m_D * * r *
 
-mD1 _ D l move 
-mD1 * * r *
+m_D1 _ D l move 
+m_D1 * * r *
 
-mE $ * r mE1
-mE * * r *
+m_E $ * r m_E1
+m_E * * r *
 
-mE1 _ E l move 
-mE1 * * r *
+m_E1 _ E l move 
+m_E1 * * r *
 
-mF $ * r mF1
-mF * * r *
+m_F $ * r m_F1
+m_F * * r *
 
-mF1 _ F l move 
-mF1 * * r *
+m_F1 _ F l move 
+m_F1 * * r *
 
-mG $ * r mG1
-mG * * r *
+m_G $ * r m_G1
+m_G * * r *
 
-mG1 _ G l move 
-mG1 * * r *
+m_G1 _ G l move 
+m_G1 * * r *
 
-mH $ * r mH1
-mH * * r *
+m_H $ * r m_H1
+m_H * * r *
 
-mH1 _ H l move 
-mH1 * * r *
+m_H1 _ H l move 
+m_H1 * * r *
 
-mI $ * r mI1
-mI * * r *
+m_I $ * r m_I1
+m_I * * r *
 
-mI1 _ I l move 
-mI1 * * r *
+m_I1 _ I l move 
+m_I1 * * r *
 
-mJ $ * r mJ1
-mJ * * r *
+m_J $ * r m_J1
+m_J * * r *
 
-mJ1 _ J l move 
-mJ1 * * r *
+m_J1 _ J l move 
+m_J1 * * r *
 
-mK $ * r mK1
-mK * * r *
+m_K $ * r m_K1
+m_K * * r *
 
-mK1 _ K l move 
-mK1 * * r *
+m_K1 _ K l move 
+m_K1 * * r *
 
-mL $ * r mL1
-mL * * r *
+m_L $ * r m_L1
+m_L * * r *
 
-mL1 _ L l move 
-mL1 * * r *
+m_L1 _ L l move 
+m_L1 * * r *
 
-mM $ * r mM1
-mM * * r *
+m_M $ * r m_M1
+m_M * * r *
 
-mM1 _ M l move 
-mM1 * * r *
+m_M1 _ M l move 
+m_M1 * * r *
 
-mN $ * r mN1
-mN * * r *
+m_N $ * r m_N1
+m_N * * r *
 
-mN1 _ N l move 
-mN1 * * r *
+m_N1 _ N l move 
+m_N1 * * r *
 
-mO $ * r mO1
-mO * * r *
+m_O $ * r m_O1
+m_O * * r *
 
-mO1 _ O l move 
-mO1 * * r *
+m_O1 _ O l move 
+m_O1 * * r *
 
-mP $ * r mP1
-mP * * r *
+m_P $ * r m_P1
+m_P * * r *
 
-mP1 _ P l move 
-mP1 * * r *
+m_P1 _ P l move 
+m_P1 * * r *
 
-mQ $ * r mQ1
-mQ * * r *
+m_Q $ * r m_Q1
+m_Q * * r *
 
-mQ1 _ Q l move 
-mQ1 * * r *
+m_Q1 _ Q l move 
+m_Q1 * * r *
 
-mR $ * r mR1
-mR * * r *
+m_R $ * r m_R1
+m_R * * r *
 
-mR1 _ R l move 
-mR1 * * r *
+m_R1 _ R l move 
+m_R1 * * r *
 
-mS $ * r mS1
-mS * * r *
+m_S $ * r m_S1
+m_S * * r *
 
-mS1 _ S l move 
-mS1 * * r *
+m_S1 _ S l move 
+m_S1 * * r *
 
-mT $ * r mT1
-mT * * r *
+m_T $ * r m_T1
+m_T * * r *
 
-mT1 _ T l move 
-mT1 * * r *
+m_T1 _ T l move 
+m_T1 * * r *
 
-mU $ * r mU1
-mU * * r *
+m_U $ * r m_U1
+m_U * * r *
 
-mU1 _ U l move 
-mU1 * * r *
+m_U1 _ U l move 
+m_U1 * * r *
 
-mV $ * r mV1
-mV * * r *
+m_V $ * r m_V1
+m_V * * r *
 
-mV1 _ V l move 
-mV1 * * r *
+m_V1 _ V l move 
+m_V1 * * r *
 
-mW $ * r mW1
-mW * * r *
+m_W $ * r m_W1
+m_W * * r *
 
-mW1 _ W l move 
-mW1 * * r *
+m_W1 _ W l move 
+m_W1 * * r *
 
-mX $ * r mX1
-mX * * r *
+m_X $ * r m_X1
+m_X * * r *
 
-mX1 _ X l move 
-mX1 * * r *
+m_X1 _ X l move 
+m_X1 * * r *
 
-mY $ * r mY1
-mY * * r *
+m_Y $ * r m_Y1
+m_Y * * r *
 
-mY1 _ Y l move 
-mY1 * * r *
+m_Y1 _ Y l move 
+m_Y1 * * r *
 
-mZ $ * r mZ1
-mZ * * r *
+m_Z $ * r m_Z1
+m_Z * * r *
 
-mZ1 _ Z l move 
-mZ1 * * r *
+m_Z1 _ Z l move 
+m_Z1 * * r *
 
-m0 $ * r m01
-m0 * * r *
+m_0 $ * r m_01
+m_0 * * r *
 
-m01 _ 0 l move 
-m01 * * r *
+m_01 _ 0 l move 
+m_01 * * r *
 
-m1 $ * r m11
-m1 * * r *
+m_1 $ * r m_11
+m_1 * * r *
 
-m11 _ 1 l move 
-m11 * * r *
+m_11 _ 1 l move 
+m_11 * * r *
 
-m2 $ * r m21
-m2 * * r *
+m_2 $ * r m_21
+m_2 * * r *
 
-m21 _ 2 l move 
-m21 * * r *
+m_21 _ 2 l move 
+m_21 * * r *
 
-m3 $ * r m31
-m3 * * r *
+m_3 $ * r m_31
+m_3 * * r *
 
-m31 _ 3 l move 
-m31 * * r *
+m_31 _ 3 l move 
+m_31 * * r *
 
-m4 $ * r m41
-m4 * * r *
+m_4 $ * r m_41
+m_4 * * r *
 
-m41 _ 4 l move 
-m41 * * r *
+m_41 _ 4 l move 
+m_41 * * r *
 
-m5 $ * r m51
-m5 * * r *
+m_5 $ * r m_51
+m_5 * * r *
 
-m51 _ 5 l move 
-m51 * * r *
+m_51 _ 5 l move 
+m_51 * * r *
 
-m6 $ * r m61
-m6 * * r *
+m_6 $ * r m_61
+m_6 * * r *
 
-m61 _ 6 l move 
-m61 * * r *
+m_61 _ 6 l move 
+m_61 * * r *
 
-m7 $ * r m71
-m7 * * r *
+m_7 $ * r m_71
+m_7 * * r *
 
-m71 _ 7 l move 
-m71 * * r *
+m_71 _ 7 l move 
+m_71 * * r *
 
-m8 $ * r m81
-m8 * * r *
+m_8 $ * r m_81
+m_8 * * r *
 
-m81 _ 8 l move 
-m81 * * r *
+m_81 _ 8 l move 
+m_81 * * r *
 
-m9 $ * r m91
-m9 * * r *
+m_9 $ * r m_91
+m_9 * * r *
 
-m91 _ 9 l move 
-m91 * * r *
+m_91 _ 9 l move 
+m_91 * * r *
