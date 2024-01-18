@@ -12,11 +12,20 @@ def create_move_circuit(alphabet):
             f.write('m' + c + ' * * r *\n\n')
             f.write('m' + c + '1 _ '+ c +' l move \n')
             f.write('m' + c + '1 * * r *\n')
-    with open ('move_circuit_dynamic.txt', 'r') as f:
-        s = ''
+    static = ''
+    with open ('move_circuit_static.txt', 'r') as f:
         for line in f.readlines():
-            s += line
-        pyperclip.copy(s)
+            static += line
+    
+    dynamic = ''
+    with open ('move_circuit_dynamic.txt', 'r') as f:
+        for line in f.readlines():
+            dynamic += line
+    
+    with open('move_circuit.txt', 'w') as f:
+        f.write(static)
+        f.write('\n')
+        f.write(dynamic)
 
 def create_copy_circuit(alphabet):
     with open('copy_circuit_dynamic.txt', 'w') as f:
@@ -29,11 +38,20 @@ def create_copy_circuit(alphabet):
             f.write('w' + c + '1 * * r *\n\n')
             f.write('w' + c + '2 _ '+ c +' l copy \n')
             f.write('w' + c + '2 * * r *\n')
-    with open ('copy_circuit_dynamic.txt', 'r') as f:
-        s = ''
+    static = ''
+    with open ('copy_circuit_static.txt', 'r') as f:
         for line in f.readlines():
-            s += line
-        pyperclip.copy(s)
+            static += line
+    
+    dynamic = ''
+    with open ('copy_circuit_dynamic.txt', 'r') as f:
+        for line in f.readlines():
+            dynamic += line
+    
+    with open('copy_circuit.txt', 'w') as f:
+        f.write(static)
+        f.write('\n')
+        f.write(dynamic)
 
 def create_writeLeft_circuit(alphabet):
     with open('writeLeft_circuit_dynamic.txt', 'w') as f:
@@ -44,11 +62,20 @@ def create_writeLeft_circuit(alphabet):
             f.write('wl' + c + ' * * l *\n\n')
             f.write('wl' + c + '1 _ '+ c +' r writeLeft3 \n')
             f.write('wl' + c + '1 * * l *\n')
-    with open ('writeLeft_circuit_dynamic.txt', 'r') as f:
-        s = ''
+    static = ''
+    with open ('writeLeft_circuit_static.txt', 'r') as f:
         for line in f.readlines():
-            s += line
-        pyperclip.copy(s)
+            static += line
+    
+    dynamic = ''
+    with open ('writeLeft_circuit_dynamic.txt', 'r') as f:
+        for line in f.readlines():
+            dynamic += line
+    
+    with open('writeLeft_circuit.txt', 'w') as f:
+        f.write(static)
+        f.write('\n')
+        f.write(dynamic)
 
 def create_moveToFront_circuit(alphabet):
     with open('moveToFront_circuit_dynamic.txt', 'w') as f:
@@ -60,11 +87,20 @@ def create_moveToFront_circuit(alphabet):
             f.write('mf' + c + ' * * r *\n\n')
             f.write('mf' + c + '1 _ '+ c +' l moveToFront \n')
             f.write('mf' + c + '1 * * l *\n')
-    with open ('moveToFront_circuit_dynamic.txt', 'r') as f:
-        s = ''
+    static = ''
+    with open ('moveToFront_circuit_static.txt', 'r') as f:
         for line in f.readlines():
-            s += line
-        pyperclip.copy(s)
+            static += line
+    
+    dynamic = ''
+    with open ('moveToFront_circuit_dynamic.txt', 'r') as f:
+        for line in f.readlines():
+            dynamic += line
+    
+    with open('moveToFront_circuit.txt', 'w') as f:
+        f.write(static)
+        f.write('\n')
+        f.write(dynamic)
 
 def create_find_circuit(alphabet):
     with open('find_circuit_dynamic.txt', 'w') as f:
@@ -87,6 +123,7 @@ def create_find_circuit(alphabet):
         f.write(static)
         f.write(dynamic)
 
+alphabet = ['0', '1', 'a', 'b', 'c', 'd', 'o', '(', ')', '-']
 
 def create_huffman_encoding_dynamic(alphabet):
     create_move_circuit(alphabet)
@@ -95,7 +132,39 @@ def create_huffman_encoding_dynamic(alphabet):
     create_moveToFront_circuit(alphabet)
     create_find_circuit(alphabet)
 
+    move = ''
+    with open ('move_circuit.txt', 'r') as f:
+        for line in f.readlines():
+            move += line
+    copy = ''
+    with open ('copy_circuit.txt', 'r') as f:
+        for line in f.readlines():
+            copy += line                                
+    writeLeft = ''
+    with open ('writeLeft_circuit.txt', 'r') as f:
+        for line in f.readlines():
+            writeLeft += line
+    moveToFront = ''
+    with open ('moveToFront_circuit.txt', 'r') as f:
+        for line in f.readlines():
+            moveToFront += line
+    find = ''
+    with open ('find_circuit.txt', 'r') as f:
+        for line in f.readlines():
+            find += line
 
-
+    with open("../huffman_encoding_dynamic.txt", "w") as f:
+        f.write(move)
+        f.write('\n')
+        f.write(copy)
+        f.write('\n')
+        f.write(writeLeft)
+        f.write('\n')
+        f.write(moveToFront)
+        f.write('\n')
+        f.write(find)
+        f.write('\n')
+            
 
 alphabet = ['0', '1', 'a', 'b', 'c', 'd', 'o', '(', ')', '-']
+create_huffman_encoding_dynamic(alphabet)

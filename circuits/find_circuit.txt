@@ -1,8 +1,19 @@
-;;;;;;;;;;;;;;;;
+find 0 _ r f0
+find 1 _ r f1
 find a _ r fa
 find b _ r fb
 find c _ r fc
-find # * r find1
+find d _ r fd
+find o _ r fo
+find ( _ r f(
+find ) _ r f)
+find - _ r f-
+
+f0 0 * l moveWord
+f0 * * r *
+
+f1 1 * l moveWord
+f1 * * r *
 
 fa a * l moveWord
 fa * * r *
@@ -12,3 +23,18 @@ fb * * r *
 
 fc c * l moveWord
 fc * * r *
+
+fd d * l moveWord
+fd * * r *
+
+fo o * l moveWord
+fo * * r *
+
+f( ( * l moveWord
+f( * * r *
+
+f) ) * l moveWord
+f) * * r *
+
+f- - * l moveWord
+f- * * r *

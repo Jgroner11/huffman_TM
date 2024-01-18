@@ -4,11 +4,29 @@ moveToFront * * l *
 moveToFront2 # * r control
 moveToFront2 * * r *
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+moveToFront1 0 @ r mf0
+moveToFront1 1 @ r mf1
 moveToFront1 a @ r mfa
 moveToFront1 b @ r mfb
 moveToFront1 c @ r mfc
+moveToFront1 d @ r mfd
+moveToFront1 o @ r mfo
+moveToFront1 ( @ r mf(
+moveToFront1 ) @ r mf)
+moveToFront1 - @ r mf-
 moveToFront1 % _ r moveToFront2
+
+mf0 # * l mf01
+mf0 * * r *
+
+mf01 _ 0 l moveToFront 
+mf01 * * l *
+
+mf1 # * l mf11
+mf1 * * r *
+
+mf11 _ 1 l moveToFront 
+mf11 * * l *
 
 mfa # * l mfa1
 mfa * * r *
@@ -27,3 +45,33 @@ mfc * * r *
 
 mfc1 _ c l moveToFront 
 mfc1 * * l *
+
+mfd # * l mfd1
+mfd * * r *
+
+mfd1 _ d l moveToFront 
+mfd1 * * l *
+
+mfo # * l mfo1
+mfo * * r *
+
+mfo1 _ o l moveToFront 
+mfo1 * * l *
+
+mf( # * l mf(1
+mf( * * r *
+
+mf(1 _ ( l moveToFront 
+mf(1 * * l *
+
+mf) # * l mf)1
+mf) * * r *
+
+mf)1 _ ) l moveToFront 
+mf)1 * * l *
+
+mf- # * l mf-1
+mf- * * r *
+
+mf-1 _ - l moveToFront 
+mf-1 * * l *

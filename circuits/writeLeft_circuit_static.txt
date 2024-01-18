@@ -1,0 +1,9 @@
+writeLeft _ * l writeLeft1
+writeLeft * * l *
+
+writeLeft1 _ $ l writeLeft2
+writeLeft1 # * r moveWord
+writeLeft1 * * l *
+
+writeLeft3 $ _ l writeLeft
+writeLeft3 * * r *

@@ -1,6 +1,25 @@
+writeLeft2 0 * l wl0
+writeLeft2 1 * l wl1
 writeLeft2 a * l wla
 writeLeft2 b * l wlb
 writeLeft2 c * l wlc
+writeLeft2 d * l wld
+writeLeft2 o * l wlo
+writeLeft2 ( * l wl(
+writeLeft2 ) * l wl)
+writeLeft2 - * l wl-
+
+wl0 # * l wl01
+wl0 * * l *
+
+wl01 _ 0 r writeLeft3 
+wl01 * * l *
+
+wl1 # * l wl11
+wl1 * * l *
+
+wl11 _ 1 r writeLeft3 
+wl11 * * l *
 
 wla # * l wla1
 wla * * l *
@@ -19,3 +38,33 @@ wlc * * l *
 
 wlc1 _ c r writeLeft3 
 wlc1 * * l *
+
+wld # * l wld1
+wld * * l *
+
+wld1 _ d r writeLeft3 
+wld1 * * l *
+
+wlo # * l wlo1
+wlo * * l *
+
+wlo1 _ o r writeLeft3 
+wlo1 * * l *
+
+wl( # * l wl(1
+wl( * * l *
+
+wl(1 _ ( r writeLeft3 
+wl(1 * * l *
+
+wl) # * l wl)1
+wl) * * l *
+
+wl)1 _ ) r writeLeft3 
+wl)1 * * l *
+
+wl- # * l wl-1
+wl- * * l *
+
+wl-1 _ - r writeLeft3 
+wl-1 * * l *

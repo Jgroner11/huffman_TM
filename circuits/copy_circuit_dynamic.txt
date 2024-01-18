@@ -7,6 +7,7 @@ copy1 d @ l wd
 copy1 o @ l wo
 copy1 ( @ l w(
 copy1 ) @ l w)
+copy1 - @ l w-
 copy1 % _ r copy2
 
 w0 _ 0 r w01
@@ -80,3 +81,11 @@ w)1 * * r *
 
 w)2 _ ) l copy 
 w)2 * * r *
+
+w- _ - r w-1
+
+w-1 $ * r w-2
+w-1 * * r *
+
+w-2 _ - l copy 
+w-2 * * r *
