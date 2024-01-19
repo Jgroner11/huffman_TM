@@ -2,6 +2,7 @@ This is a design for a Turing Machine (TM) that will compute Huffman Codes.
 
 The completed Turing Machine is in the file 'huffman_encoding.txt'.  
 The code uses the syntax of Anthony Morphett's Turing Machine Simulator, and can be ran here:  
+# https://morphett.info/turing/turing.html?5ffe4016b61da147eba15996c7523d38
 
 On top of general tape management, there are 4 main components to this TM:  
 >  Processing binary values  
