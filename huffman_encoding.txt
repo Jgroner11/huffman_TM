@@ -1,10 +1,27 @@
-; TM that takes in set of characters and their frequencies and outputs the optimal prefix code
+; TM that takes in set of characters and their frequencies and outputs an optimal prefix code
+; Code here: https://github.com/Jgroner11/huffman_TM
+;
 ; Input format: space separated list of pairs c1 f1 c2 f2 . . . where each fi is the frequency of character ci
-;   characters must me members of the acceptable alphabet. The current alphabet is 26 letters of the alphabet, uppercase and lowercase, and all digits 0-9
-;   frequencies must be whole numbers represented in binary. The limiting factor in how long this program takes is the magnitude of these binary values so scale down and round if the program is taking too long
-;    ex: a 1001 b 111 c 1
-;    ex: a 10 b 1 c 100 d 011 
+;    Characters must me members of the acceptable alphabet. The current alphabet is the 26 letters of the English 
+;    alphabet, uppercase and lowercase, and all digits 0-9.
+;    Frequencies must be whole numbers represented in binary. The limiting factor in how long this program takes
+;    is the size of these binary digits. To decrease run time you can divide each frequency by a factor and round.
 ; Output format: space separated list of pairs c1 e1 c2 e2 . . . where ei is the binary encoding for character ci
+;
+; Sample Inputs:
+;    a 1 b 10
+;      -> 1754 steps
+;    x 10 y 11 z 1
+;      -> 5193 steps   
+;    0 10 a 110 A 111
+;      -> 7866 steps
+;    a 10 b 1 c 100 d 011
+;      -> 12319 steps
+;    a 10 b 11 Y 110 Z 10 4 10 5 1
+;      -> 32370 steps
+;    0 110 1 1001 2 100 3 1010 4 111 5 1100 6 1011 7 100 8 1101 9 10
+;      -> 278176 steps
+;
 
 0 * * * init
 * * * * halt-invalidFormat
@@ -396,7 +413,7 @@ finish1 * * r *
 finish2 $ _ r halt-accept
 finish2 - _ l *
 finish2 * * l *
-
+;____________________________________________________________________________________________________________________________________________________________________________________
 ; Dynamically created circuits start here
 move @ _ r move1
 move * * l *
