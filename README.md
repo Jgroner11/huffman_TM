@@ -13,8 +13,8 @@ For many of these components, it was required to move sets of characters around 
 circuits that performed a set of instructions and then moved to a control element which redirected the program. By changing the   
 control character, these circuits could be called again and again similar to functions.  
 There were 5 move circuits:  
-  move  
-  find  
+>  move  
+>  find  
   copy  
   moveToFront  
   writeLeft  
@@ -29,6 +29,6 @@ in the move circuits. ~ and & were used to denote the smallest and second smalle
 represented by sets of o's, and the - character was used to separate the merged characters from their frequencies.  
 
 \#   x-ooo     @ooo% z-oooo c$y-oo  
-Example of what the tape would look like when moving the y character and its frequencies to the end of the tape. The c represents a control symbol.  
+Example of what the tape would look like when moving the y character and its frequency representation to the end of the tape. The c represents a control symbol.  
   
 This project was inspired by CS 4820, a Cornell class which gives an introduction to both Turing Machines and the Huffman Encoding Algorithm.  
