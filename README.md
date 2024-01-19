@@ -28,7 +28,7 @@ character right before the end symbol was the control character. @ and % were us
 in the move circuits. ~ and & were used to denote the smallest and second smallest characters respectively. The frequencies were r
 represented by sets of o's, and the - character was used to separate the merged characters from their frequencies.
 
-#   x-ooo     @ooo% z-oooo c$y-oo
+\#   x-ooo     @ooo% z-oooo c$y-oo
 Example of what the tape would look like when moving the y character and its frequencies to the end of the tape. The c represents a control symbol.
 
 This project was inspired by CS 4820, a Cornell class which gives an introduction to both Turing Machines and the Huffman Encoding Algorithm.
